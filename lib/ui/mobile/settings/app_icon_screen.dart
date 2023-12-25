@@ -20,21 +20,25 @@ class PremiumCustomAppIconMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PanelButton(
-      onPressed: () {
-        if (!Provider.of<PremiumProvider>(context, listen: false)
-            .hasScope(PremiumScopes.changeAppIcon)) {
-          PremiumLockedFeatureUpsell.show(
-              context: context, feature: PremiumFeature.appiconchange);
-          return;
-        }
+    // return PanelButton(
+    //   onPressed: () {
+    //     if (!Provider.of<PremiumProvider>(context, listen: false)
+    //         .hasScope(PremiumScopes.changeAppIcon)) {
+    //       PremiumLockedFeatureUpsell.show(
+    //           context: context, feature: PremiumFeature.appiconchange);
+    //       return;
+    //     }
 
-        Navigator.of(context, rootNavigator: true).push(
-          CupertinoPageRoute(builder: (context) => const ModifyAppIcon()),
-        );
-      },
-      title: Text('custom_app_icon'.i18n),
-      leading: const Icon(FeatherIcons.edit),
+    //     Navigator.of(context, rootNavigator: true).push(
+    //       CupertinoPageRoute(builder: (context) => const ModifyAppIcon()),
+    //     );
+    //   },
+    //   title: Text('custom_app_icon'.i18n),
+    //   leading: const Icon(FeatherIcons.edit),
+    // );
+    return SizedBox(
+      width: 0,
+      height: 0,
     );
   }
 }
