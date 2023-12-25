@@ -1,12 +1,11 @@
 import 'package:filcnaplo/models/settings.dart';
 import 'package:filcnaplo/theme/colors/colors.dart';
 import 'package:filcnaplo_mobile_ui/common/panel/panel.dart';
-import 'package:filcnaplo_mobile_ui/common/panel/panel_button.dart';
+// import 'package:filcnaplo_mobile_ui/common/panel/panel_button.dart';
 import 'package:filcnaplo_premium/helpers/app_icon_helper.dart';
-import 'package:filcnaplo_premium/models/premium_scopes.dart';
-import 'package:filcnaplo_premium/providers/premium_provider.dart';
-import 'package:filcnaplo_premium/ui/mobile/premium/upsell.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:filcnaplo_premium/models/premium_scopes.dart';
+// import 'package:filcnaplo_premium/providers/premium_provider.dart';
+// import 'package:filcnaplo_premium/ui/mobile/premium/upsell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +35,7 @@ class PremiumCustomAppIconMenu extends StatelessWidget {
     //   title: Text('custom_app_icon'.i18n),
     //   leading: const Icon(FeatherIcons.edit),
     // );
-    return SizedBox(
+    return const SizedBox(
       width: 0,
       height: 0,
     );
