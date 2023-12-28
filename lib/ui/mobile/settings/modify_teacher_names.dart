@@ -184,7 +184,10 @@ class _ModifyTeacherNamesState extends State<ModifyTeacherNames> {
                         ? "select_teacher".i18n
                         : teachers
                             .firstWhere(
-                                (element) => element.id == selectedTeacherId)
+                              (element) => element.id == selectedTeacherId,
+                              orElse: () => Teacher(
+                                  id: 'noid', name: "select_teacher".i18n),
+                            )
                             .name,
                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w700,
@@ -340,8 +343,18 @@ class _ModifyTeacherNamesState extends State<ModifyTeacherNames> {
                       child: Column(
                         children: snapshot.data!.keys.map(
                           (key) {
-                            Teacher? teacher = teachers
-                                .firstWhere((element) => key == element.id);
+                            Teacher? teacher = teachers.firstWhere(
+                              (element) => key == element.id,
+                              orElse: () => Teacher(id: 'noid', name: 'noname'),
+                            );
+
+                            if (teacher.id == 'noid') {
+                              return const SizedBox(
+                                width: 0,
+                                height: 0,
+                              );
+                            }
+
                             String renameTo = snapshot.data![key]!;
                             return RenamedTeacherItem(
                               teacher: teacher,
