@@ -232,7 +232,7 @@ class _GoalStateScreenState extends State<GoalStateScreen> {
                               ),
                             );
                           },
-                          icon: const Icon(FeatherIcons.x),
+                          icon: const Icon(FeatherIcons.trash2),
                         ),
                       ],
                     ),
