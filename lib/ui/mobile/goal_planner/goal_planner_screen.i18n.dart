@@ -13,6 +13,7 @@ extension Localization on String {
           "fastest": "Fastest",
           "unsolvable": "Unsolvable :(",
           "unreachable": "Unreachable :(",
+          "reached": "Already reached! :D",
         },
         "hu_hu": {
           "goal_planner_title": "Cél követés",
@@ -24,6 +25,7 @@ extension Localization on String {
           "fastest": "Leggyorsabb",
           "unsolvable": "Megoldhatatlan :(",
           "unreachable": "Elérhetetlen :(",
+          "reached": "Már elérted! :D",
         },
         "de_de": {
           "goal_planner_title": "Zielplanung",
@@ -35,6 +37,7 @@ extension Localization on String {
           "fastest": "Am schnellsten",
           "unsolvable": "Unlösbar :(",
           "unreachable": "Unerreichbar :(",
+          "reached": "Bereits erreicht! :D",
         },
       };
 

@@ -107,7 +107,12 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
       fastest = plans.removeAt(0);
     } catch (_) {}
 
-    if ((recommended?.plan.length ?? 0) - (fastest?.plan.length ?? 0) >= 3) {
+    // print((recommended?.plan.length ?? 0).toString() + '-kuki');
+    // print((fastest?.plan.length ?? 0).toString() + '--asd');
+
+    if ((((recommended?.plan.length ?? 0) - (fastest?.plan.length ?? 0)) >=
+            5) &&
+        fastest != null) {
       recommended = fastest;
     }
 
@@ -119,7 +124,9 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
       return PlanResult.unsolvable;
     }
 
-    if (recommended!.plan.length > 10) {
+    // print(recommended!.plan.length.toString() + '--------');
+
+    if (recommended!.plan.length > 20) {
       recommended = null;
       fastest = null;
       otherPlans = [];
