@@ -1,5 +1,5 @@
 import 'package:filcnaplo/models/settings.dart';
-import 'package:filcnaplo_premium/api/auth.dart';
+import 'package:refilc_plus/api/auth.dart';
 import 'package:flutter/widgets.dart';
 
 class PremiumProvider extends ChangeNotifier {

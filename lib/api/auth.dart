@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:filcnaplo/models/settings.dart';
-import 'package:filcnaplo_premium/models/premium_scopes.dart';
+import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:home_widget/home_widget.dart';

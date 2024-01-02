@@ -4,7 +4,7 @@ import 'package:filcnaplo/helpers/average_helper.dart';
 import 'package:filcnaplo/models/settings.dart';
 import 'package:filcnaplo/theme/colors/colors.dart';
 import 'package:filcnaplo_kreta_api/models/grade.dart';
-import 'package:filcnaplo_premium/ui/mobile/goal_planner/graph.i18n.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/graph.i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:provider/provider.dart';

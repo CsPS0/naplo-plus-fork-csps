@@ -10,10 +10,10 @@ import 'package:filcnaplo_kreta_api/providers/grade_provider.dart';
 import 'package:filcnaplo_mobile_ui/common/average_display.dart';
 import 'package:filcnaplo_mobile_ui/common/round_border_icon.dart';
 import 'package:filcnaplo_mobile_ui/pages/grades/calculator/grade_calculator_provider.dart';
-import 'package:filcnaplo_premium/ui/mobile/goal_planner/goal_input.dart';
-import 'package:filcnaplo_premium/ui/mobile/goal_planner/goal_planner.dart';
-import 'package:filcnaplo_premium/ui/mobile/goal_planner/goal_planner_screen.i18n.dart';
-import 'package:filcnaplo_premium/ui/mobile/goal_planner/route_option.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/goal_input.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner_screen.i18n.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/route_option.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

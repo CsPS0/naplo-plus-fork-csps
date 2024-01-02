@@ -1,4 +1,4 @@
-import 'package:filcnaplo_premium/models/premium_scopes.dart';
+import 'package:refilc_plus/models/premium_scopes.dart';
 
 class PremiumResult {
   final String accessToken;

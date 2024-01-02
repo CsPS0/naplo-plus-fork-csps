@@ -1,5 +1,5 @@
 import 'package:filcnaplo/models/settings.dart';
-import 'package:filcnaplo_premium/ui/mobile/goal_planner/goal_input.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/goal_input.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

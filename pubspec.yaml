@@ -1,4 +1,4 @@
-name: filcnaplo_premium
+name: refilc_plus
 publish_to: "none"
 
 environment:
@@ -9,11 +9,13 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
-  # Filcnaplo main dep
+  # reFilc Main
   filcnaplo:
     path: ../filcnaplo/
+  # e-KRETA API (kreten) client
   filcnaplo_kreta_api:
     path: ../filcnaplo_kreta_api/
+  # reFilc Mobile UI
   filcnaplo_mobile_ui:
     path: "../filcnaplo_mobile_ui/"
 
