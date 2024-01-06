@@ -30,9 +30,9 @@ class WelcomeMessagePanelButton extends StatelessWidget {
     return PanelButton(
       onPressed: () {
         if (!Provider.of<PremiumProvider>(context, listen: false)
-            .hasScope(PremiumScopes.all)) {
+            .hasScope(PremiumScopes.welcomeMessage)) {
           PremiumLockedFeatureUpsell.show(
-              context: context, feature: PremiumFeature.profile);
+              context: context, feature: PremiumFeature.welcomeMessage);
           return;
         }
         showDialog(

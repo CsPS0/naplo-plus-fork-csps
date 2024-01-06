@@ -12,9 +12,16 @@ enum PremiumFeature {
   weeklytimetable,
   widget,
   // new things
-  teacherrename,
-  goalplanner,
-  appiconchange,
+  moreAccounts, // cap, (ink, sponge)
+  betaReleases, // cap
+  welcomeMessage, // cap
+  selfNotes, // cap
+  gradeCalculation, // ink
+  liveActivity, // ink
+  timetableNotes, // ink
+  iconChange, // sponge
+  fontChange, // sponge
+  goalPlanner, // sponge
 }
 
 enum PremiumFeatureLevel {
@@ -34,21 +41,45 @@ const Map<PremiumFeature, PremiumFeatureLevel> _featureLevels = {
   PremiumFeature.weeklytimetable: PremiumFeatureLevel.old,
   PremiumFeature.widget: PremiumFeatureLevel.old,
   // new things
-  PremiumFeature.teacherrename: PremiumFeatureLevel.cap,
-  PremiumFeature.goalplanner: PremiumFeatureLevel.cap,
+  PremiumFeature.moreAccounts: PremiumFeatureLevel.cap,
+  PremiumFeature.betaReleases: PremiumFeatureLevel.cap,
+  PremiumFeature.welcomeMessage: PremiumFeatureLevel.cap,
+  PremiumFeature.selfNotes: PremiumFeatureLevel.cap,
+  PremiumFeature.gradeCalculation: PremiumFeatureLevel.ink,
+  PremiumFeature.liveActivity: PremiumFeatureLevel.ink,
+  PremiumFeature.timetableNotes: PremiumFeatureLevel.ink,
+  PremiumFeature.iconChange: PremiumFeatureLevel.sponge,
+  PremiumFeature.fontChange: PremiumFeatureLevel.sponge,
+  PremiumFeature.goalPlanner: PremiumFeatureLevel.sponge,
 };
 
 const Map<PremiumFeature, String> _featureAssets = {
+  // old
   PremiumFeature.gradestats: "assets/images/premium_stats_showcase.png",
   PremiumFeature.customcolors: "assets/images/premium_theme_showcase.png",
   PremiumFeature.profile: "assets/images/premium_nickname_showcase.png",
   PremiumFeature.weeklytimetable:
       "assets/images/premium_timetable_showcase.png",
-  PremiumFeature.goalplanner: "assets/images/premium_goal_showcase.png",
+  // PremiumFeature.goalplanner: "assets/images/premium_goal_showcase.png",
   PremiumFeature.widget: "assets/images/premium_widget_showcase.png",
+  // new
+  PremiumFeature.moreAccounts: "assets/images/premium_banner/more_accounts.png",
+  PremiumFeature.betaReleases: "assets/images/premium_banner/beta_releases.png",
+  PremiumFeature.welcomeMessage:
+      "assets/images/premium_banner/welcome_message.png",
+  PremiumFeature.selfNotes: "assets/images/premium_banner/self_notes.png",
+  PremiumFeature.gradeCalculation:
+      "assets/images/premium_banner/grade_calc.png",
+  PremiumFeature.liveActivity: "assets/images/premium_banner/live_activity.png",
+  PremiumFeature.timetableNotes:
+      "assets/images/premium_banner/timetable_notes.png",
+  PremiumFeature.iconChange: "assets/images/premium_banner/app_icon.png",
+  PremiumFeature.fontChange: "assets/images/premium_banner/font.png",
+  PremiumFeature.goalPlanner: "assets/images/premium_banner/goal_planner.png",
 };
 
 const Map<PremiumFeature, String> _featureTitles = {
+  // old shit
   PremiumFeature.gradestats: "Találtál egy prémium funkciót.",
   PremiumFeature.customcolors: "Több személyre szabás kell?",
   PremiumFeature.profile: "Nem tetszik a neved?",
@@ -56,11 +87,24 @@ const Map<PremiumFeature, String> _featureTitles = {
   PremiumFeature.subjectrename:
       "Sokáig tart elolvasni, hogy \"Földrajz természettudomány\"?",
   PremiumFeature.weeklytimetable: "Szeretnéd egyszerre az egész hetet látni?",
-  PremiumFeature.goalplanner: "Kövesd a céljaidat, sok-sok statisztikával.",
+  // PremiumFeature.goalplanner: "Kövesd a céljaidat, sok-sok statisztikával.",
   PremiumFeature.widget: "Órák a kezdőképernyőd kényelméből.",
+  // new shit
+  PremiumFeature.moreAccounts: "Több fiókot használnál?",
+  PremiumFeature.betaReleases: "Előre kipróbálnád a frissítéseket?",
+  PremiumFeature.welcomeMessage: "\"Szia cica, van gazdád?\"",
+  PremiumFeature.selfNotes: "Felírnád a feladataid?",
+  PremiumFeature.gradeCalculation: "Lusta vagy matekozni?",
+  PremiumFeature.liveActivity: "Tudom, nem túl szép a sima szürke :P",
+  PremiumFeature.timetableNotes:
+      "\"Mit is csináltunk órán? Volt angol házi??\"",
+  PremiumFeature.iconChange: "Ez aztán különleges!",
+  PremiumFeature.fontChange: "Woah! Micsoda gyönyörű betűk!",
+  PremiumFeature.goalPlanner: "Még több javaslat kell?",
 };
 
 const Map<PremiumFeature, String> _featureDescriptions = {
+  // old
   PremiumFeature.gradestats:
       "Támogass Kupak szinten, hogy több statisztikát láthass. ",
   PremiumFeature.customcolors:
@@ -73,9 +117,30 @@ const Map<PremiumFeature, String> _featureDescriptions = {
       "Támogass Kupak szinten, hogy átnevezhesd Föcire.",
   PremiumFeature.weeklytimetable:
       "Támogass Tinta szinten a heti órarend funkcióért.",
-  PremiumFeature.goalplanner: "A célkövetéshez támogass Tinta szinten.",
+  // PremiumFeature.goalplanner: "A célkövetéshez támogass Tinta szinten.",
   PremiumFeature.widget:
       "Támogass Tinta szinten, és helyezz egy widgetet a kezdőképernyődre.",
+  // new
+  PremiumFeature.moreAccounts:
+      "Minden támogatási szinttel egyre magasabb a limit.",
+  PremiumFeature.betaReleases:
+      "Támogass Kupak szinten, hogy előre megkapd a béta frissítéseket.",
+  PremiumFeature.welcomeMessage:
+      "Az egyedi üdvözléshez elég csupán a Kupak szint!",
+  PremiumFeature.selfNotes:
+      "Támogass Kupak szinten, és jegyezd fel minden fontos dolgod.",
+  PremiumFeature.gradeCalculation:
+      "Tinta szinttől egyszerűbb kiszámolnod a tervezett átlagod.",
+  PremiumFeature.liveActivity:
+      "Tinta szintű támogatással átszínezhetsz bármilyenre.",
+  PremiumFeature.timetableNotes:
+      "Nincs több ilyen kérdés, ha Tinta szinten támogatsz.",
+  PremiumFeature.iconChange:
+      "Támogass Szivacs szinten az alkalmazás ikonjának megváltoztatásához.",
+  PremiumFeature.fontChange:
+      "Szivacs szintű támogatással megváltoztathatod a betűtípust is.",
+  PremiumFeature.goalPlanner:
+      "Támogass Szivacs szinten és használd ki a cél kitűzés minden funkcióját!",
 };
 
 class PremiumLockedFeatureUpsell extends StatelessWidget {
@@ -91,7 +156,9 @@ class PremiumLockedFeatureUpsell extends StatelessWidget {
 
   IconData _getIcon() => _featureLevels[feature] == PremiumFeatureLevel.cap
       ? FilcIcons.kupak
-      : FilcIcons.tinta;
+      : _featureLevels[feature] == PremiumFeatureLevel.ink
+          ? FilcIcons.tinta
+          : FilcIcons.tinta;
   Color _getColor(BuildContext context) =>
       _featureLevels[feature] == PremiumFeatureLevel.cap
           ? const Color(0xffC8A708)

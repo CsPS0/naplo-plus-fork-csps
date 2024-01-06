@@ -17,7 +17,7 @@ const Map<PremiumInlineFeature, PremiumFeature> _featuresInline = {
   PremiumInlineFeature.nickname: PremiumFeature.profile,
   PremiumInlineFeature.theme: PremiumFeature.customcolors,
   PremiumInlineFeature.widget: PremiumFeature.widget,
-  PremiumInlineFeature.goal: PremiumFeature.goalplanner,
+  // PremiumInlineFeature.goal: PremiumFeature.goalplanner,
   PremiumInlineFeature.stats: PremiumFeature.gradestats,
 };
 

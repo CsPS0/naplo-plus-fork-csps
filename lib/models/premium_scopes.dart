@@ -1,21 +1,37 @@
 class PremiumScopes {
-  /// everything
+  // everything
   static const all = "refilc.plus.*";
 
-  /// idk where it will be but i need it
-  static const renameTeachers = "refilc.plus.RENAME_TEACHERS";
-  static const goalPlanner = "refilc.plus.GOAL_PLANNER";
-  static const changeAppIcon = "refilc.plus.CHANGE_APP_ICON";
+  // idk where it will be but i need it
+  // static const renameTeachers = "refilc.plus.RENAME_TEACHERS";
+  // static const goalPlanner = "refilc.plus.GOAL_PLANNER";
+  // static const changeAppIcon = "refilc.plus.CHANGE_APP_ICON";
 
-  /// tier 1 (Kupak)
+  // tier 1 (Kupak)
+  static const maxTwoAccounts = "refilc.plus.MAX_TWO_ACCOUNTS";
+  static const earlyAccess = "refilc.plus.EARLY_ACCESS";
+  static const welcomeMessage = "refilc.plus.WELCOME_MESSAGE";
+  static const unlimitedSelfNotes = "refilc.plus.UNLIMITED_SELF_NOTES";
+  // tier scope
+  static const tierCap = "refilc.plus.tier.CAP";
 
-  /// custom
+  // tier 2 (Tinta)
+  static const maxFiveAccounts = "refilc.plus.MAX_FIVE_ACCOUNTS";
+  static const totalGradeCalculator = "refilc.plus.TOTAL_GRADE_CALCULATOR";
+  static const liveActivityColor = "refilc.plus.LIVE_ACTIVITY_COLOR";
+  static const timetableNotes = "refilc.plus.TIMETABLE_NOTES";
+  // tier scope
+  static const tierInk = "refilc.plus.tier.INK";
 
-  /// tier 2 (Tinta)
+  // tier 3 (Szivacs)
+  static const noAccountLimit = "refilc.plus.NO_ACCOUNT_LIMIT";
+  static const appIconChange = "refilc.plus.APP_ICON_CHANGE";
+  static const customFont = "refilc.plus.CUSTOM_FONT";
+  static const unlimitedGoalPlanner = "refilc.plus.UNLIMITED_GOAL_PLANNER";
+  // tier scope
+  static const tierSponge = "refilc.plus.tier.SPONGE";
 
-  /// tier 3 (Szivacs)
-
-  /// old scopes
+  // old scopes
   static const nickname = "refilc.plus.NICKNAME";
   static const gradeStats = "refilc.plus.GRADE_STATS";
   static const customColors = "refilc.plus.CUSTOM_COLORS";
