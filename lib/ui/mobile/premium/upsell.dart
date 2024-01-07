@@ -1,5 +1,5 @@
 import 'package:filcnaplo/icons/filc_icons.dart';
-import 'package:filcnaplo_mobile_ui/premium/premium_screen.dart';
+import 'package:filcnaplo_mobile_ui/premium/plus_screen.dart';
 import 'package:flutter/material.dart';
 
 enum PremiumFeature {
@@ -240,7 +240,7 @@ class PremiumLockedFeatureUpsell extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context, rootNavigator: true)
                         .push(MaterialPageRoute(builder: (context) {
-                      return const PremiumScreen();
+                      return const PlusScreen();
                     }));
                   },
                   child: const Text(

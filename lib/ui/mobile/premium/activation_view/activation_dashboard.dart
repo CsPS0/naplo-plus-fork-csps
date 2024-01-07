@@ -58,7 +58,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
           ),
           const SizedBox(height: 32.0),
           const Text(
-            "Jelentkezz be a GitHub felületén és adj hozzáférést a Filcnek, hogy aktiváld a Premiumot.",
+            "Jelentkezz be a Gitbub felületén és adj hozzáférést a reFilc-nek, hogy aktiváld a reFilc+ szinted.",
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
           ),
@@ -67,7 +67,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14.0)),
             child: const Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -85,7 +85,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                   ),
                   SizedBox(height: 6.0),
                   Text(
-                    "Csak akkor érzékeli a Filc a támogatói státuszod, ha nem állítod privátra!",
+                    "Csak akkor érzékeli a reFilc a támogatói státuszod, ha Github-on nem állítod privátra!",
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ],
@@ -97,7 +97,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14.0)),
             child: const Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -115,7 +115,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                   ),
                   SizedBox(height: 6.0),
                   Text(
-                    "Ha friss támogató vagy, 5-10 percbe telhet az aktiválás. Kérlek gyere vissza később, és próbáld újra!",
+                    "Az aktiválás azonnal történik, ha már támogató vagy, viszont ha még nem, előbb nyomj a neked tetsző szintre, majd fizesd ki Github-on és utána kapcsold össze a fiókod!",
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ],
@@ -127,12 +127,12 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14.0)),
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Ha bejelentkezés után nem lép vissza az alkalmazásba automatikusan, aktiváld a támogatásod manuálisan",
+                    "Ha bejelentkezés után a Github nem irányít vissza az alkalmazásba automatikusan, aktiválhatod a támogatásod a hitelesítő token-el.",
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500),
                   ),
