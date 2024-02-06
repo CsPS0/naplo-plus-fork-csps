@@ -1,5 +1,6 @@
 import 'package:filcnaplo/api/providers/user_provider.dart';
 import 'package:filcnaplo/models/settings.dart';
+import 'package:filcnaplo/theme/colors/colors.dart';
 import 'package:filcnaplo_mobile_ui/common/panel/panel_button.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:refilc_plus/providers/premium_provider.dart';
@@ -39,8 +40,17 @@ class WelcomeMessagePanelButton extends StatelessWidget {
             context: context,
             builder: (context) => WelcomeMessageEditor(settingsProvider));
       },
-      title: Text("welcome_msg".i18n),
-      leading: const Icon(FeatherIcons.smile),
+      title: Text(
+        "welcome_msg".i18n,
+        style: TextStyle(
+          color: AppColors.of(context).text.withOpacity(.95),
+        ),
+      ),
+      leading: Icon(
+        FeatherIcons.smile,
+        size: 22.0,
+        color: AppColors.of(context).text.withOpacity(.95),
+      ),
       trailing: Container(
         constraints: const BoxConstraints(maxWidth: 100),
         child: Text(
