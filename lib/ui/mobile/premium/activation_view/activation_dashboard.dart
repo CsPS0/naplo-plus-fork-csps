@@ -132,7 +132,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Ha bejelentkezés után a Github nem irányít vissza az alkalmazásba automatikusan, aktiválhatod a támogatásod a hitelesítő token-el.",
+                    "Ha bejelentkezés után a Github nem irányít vissza az alkalmazásba automatikusan, aktiválhatod a támogatásod a hitelesítő token-nel.",
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500),
                   ),
