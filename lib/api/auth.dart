@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:filcnaplo/api/client.dart';
 import 'package:filcnaplo/models/settings.dart';
+import 'package:flutter/foundation.dart';
 import 'package:refilc_plus/models/premium_result.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/services.dart';
@@ -92,14 +93,16 @@ class PremiumAuth {
 
       for (int tries = 0; tries < 3; tries++) {
         try {
-          print(FilcAPI.plusActivation);
-          print(_settings.premiumAccessToken);
+          if (kDebugMode) {
+            print(FilcAPI.plusActivation);
+            print(_settings.premiumAccessToken);
+          }
 
           final res = await http.post(Uri.parse(FilcAPI.plusActivation), body: {
             "access_token": _settings.premiumAccessToken,
           });
 
-          print(res.body);
+          if (kDebugMode) print(res.body);
 
           if (res.body == "") throw "empty body";
           if (res.body == "Unauthorized") {
