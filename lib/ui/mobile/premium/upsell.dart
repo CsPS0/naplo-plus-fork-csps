@@ -22,6 +22,7 @@ enum PremiumFeature {
   iconChange, // sponge
   fontChange, // sponge
   goalPlanner, // sponge
+  gradeRarities,
 }
 
 enum PremiumFeatureLevel {
@@ -51,6 +52,8 @@ const Map<PremiumFeature, PremiumFeatureLevel> _featureLevels = {
   PremiumFeature.iconChange: PremiumFeatureLevel.sponge,
   PremiumFeature.fontChange: PremiumFeatureLevel.sponge,
   PremiumFeature.goalPlanner: PremiumFeatureLevel.sponge,
+
+  PremiumFeature.gradeRarities: PremiumFeatureLevel.old,
 };
 
 const Map<PremiumFeature, String> _featureAssets = {
@@ -76,6 +79,9 @@ const Map<PremiumFeature, String> _featureAssets = {
   PremiumFeature.iconChange: "assets/images/premium_banner/app_icon.png",
   PremiumFeature.fontChange: "assets/images/premium_banner/font.png",
   PremiumFeature.goalPlanner: "assets/images/premium_banner/goal_planner.png",
+
+  PremiumFeature.gradeRarities:
+      "assets/images/premium_banner/grade_rarities.png",
 };
 
 const Map<PremiumFeature, String> _featureTitles = {
@@ -101,6 +107,8 @@ const Map<PremiumFeature, String> _featureTitles = {
   PremiumFeature.iconChange: "Ez aztán különleges!",
   PremiumFeature.fontChange: "Woah! Micsoda gyönyörű betűk!",
   PremiumFeature.goalPlanner: "Még több javaslat kell?",
+
+  PremiumFeature.gradeRarities: "Nem epikus, hanem ultraszuper?",
 };
 
 const Map<PremiumFeature, String> _featureDescriptions = {
@@ -141,6 +149,8 @@ const Map<PremiumFeature, String> _featureDescriptions = {
       "Szivacs szintű támogatással megváltoztathatod a betűtípust is.",
   PremiumFeature.goalPlanner:
       "Támogass Szivacs szinten és használd ki a cél kitűzés minden funkcióját!",
+
+  PremiumFeature.gradeRarities: "A reFilc+ Tinta szintjével ez is elérhető!",
 };
 
 class PremiumLockedFeatureUpsell extends StatelessWidget {

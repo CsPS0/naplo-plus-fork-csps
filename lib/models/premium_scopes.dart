@@ -31,6 +31,9 @@ class PremiumScopes {
   // tier scope
   static const tierSponge = "refilc.plus.tier.SPONGE";
 
+  // uncategorized
+  static const customGradeRarities = "refilc.plus.CUSTOM_GRADE_RARITIES";
+
   // old scopes
   static const nickname = "refilc.plus.NICKNAME";
   static const gradeStats = "refilc.plus.GRADE_STATS";
