@@ -10,29 +10,29 @@ class PremiumScopes {
   // tier 1 (Kupak)
   static const maxTwoAccounts = "refilc.plus.MAX_TWO_ACCOUNTS";
   static const earlyAccess = "refilc.plus.EARLY_ACCESS";
+  static const totalGradeCalculator = "refilc.plus.TOTAL_GRADE_CALCULATOR";
   static const welcomeMessage = "refilc.plus.WELCOME_MESSAGE";
   static const unlimitedSelfNotes = "refilc.plus.UNLIMITED_SELF_NOTES";
+  static const customGradeRarities = "refilc.plus.CUSTOM_GRADE_RARITIES";
   // tier scope
   static const tierCap = "refilc.plus.tier.CAP";
 
   // tier 2 (Tinta)
-  static const maxFiveAccounts = "refilc.plus.MAX_FIVE_ACCOUNTS";
-  static const totalGradeCalculator = "refilc.plus.TOTAL_GRADE_CALCULATOR";
+  static const noAccountLimit = "refilc.plus.NO_ACCOUNT_LIMIT";
+  static const appIconChange = "refilc.plus.APP_ICON_CHANGE";
   static const liveActivityColor = "refilc.plus.LIVE_ACTIVITY_COLOR";
+  static const customFont = "refilc.plus.CUSTOM_FONT";
   static const timetableNotes = "refilc.plus.TIMETABLE_NOTES";
+  static const unlimitedGoalPlanner = "refilc.plus.UNLIMITED_GOAL_PLANNER";
   // tier scope
   static const tierInk = "refilc.plus.tier.INK";
 
   // tier 3 (Szivacs)
-  static const noAccountLimit = "refilc.plus.NO_ACCOUNT_LIMIT";
-  static const appIconChange = "refilc.plus.APP_ICON_CHANGE";
-  static const customFont = "refilc.plus.CUSTOM_FONT";
-  static const unlimitedGoalPlanner = "refilc.plus.UNLIMITED_GOAL_PLANNER";
+  // cancelled
   // tier scope
   static const tierSponge = "refilc.plus.tier.SPONGE";
 
   // uncategorized
-  static const customGradeRarities = "refilc.plus.CUSTOM_GRADE_RARITIES";
 
   // old scopes
   static const nickname = "refilc.plus.NICKNAME";
