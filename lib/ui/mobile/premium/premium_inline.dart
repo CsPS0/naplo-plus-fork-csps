@@ -48,22 +48,25 @@ class PremiumInline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(_getAsset()),
-        Positioned.fill(
-          child: Material(
-            type: MaterialType.transparency,
-            child: InkWell(
-              borderRadius: BorderRadius.circular(16.0),
-              onTap: () {
-                PremiumLockedFeatureUpsell.show(
-                    context: context, feature: _getFeature());
-              },
-            ),
-          ),
-        ),
-      ],
+    return const SizedBox(
+      height: 0,
     );
+    // return Stack(
+    //   children: [
+    //     Image.asset(_getAsset()),
+    //     Positioned.fill(
+    //       child: Material(
+    //         type: MaterialType.transparency,
+    //         child: InkWell(
+    //           borderRadius: BorderRadius.circular(16.0),
+    //           onTap: () {
+    //             PremiumLockedFeatureUpsell.show(
+    //                 context: context, feature: _getFeature());
+    //           },
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 }
