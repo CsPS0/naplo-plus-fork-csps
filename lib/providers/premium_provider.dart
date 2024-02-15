@@ -6,8 +6,8 @@ import 'package:flutter/widgets.dart';
 class PremiumProvider extends ChangeNotifier {
   final SettingsProvider _settings;
   List<String> get scopes => _settings.premiumScopes;
-  bool hasScope(String scope) =>
-      scopes.contains(scope) || scopes.contains(PremiumScopes.all);
+  bool hasScope(String scope) => true;
+  // scopes.contains(scope) || scopes.contains(PremiumScopes.all);
   String get accessToken => _settings.premiumAccessToken;
   String get login => _settings.premiumLogin;
   bool get hasPremium =>
