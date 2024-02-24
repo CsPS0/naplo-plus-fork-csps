@@ -10,14 +10,14 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # reFilc Main
-  filcnaplo:
-    path: ../filcnaplo/
+  refilc:
+    path: ../refilc/
   # e-KRETA API (kreten) client
-  filcnaplo_kreta_api:
-    path: ../filcnaplo_kreta_api/
+  refilc_kreta_api:
+    path: ../refilc_kreta_api/
   # reFilc Mobile UI
-  filcnaplo_mobile_ui:
-    path: "../filcnaplo_mobile_ui/"
+  refilc_mobile_ui:
+    path: "../refilc_mobile_ui/"
 
   provider: ^5.0.0
   flutter_feather_icons: ^2.0.0+1

@@ -1,4 +1,4 @@
-import 'package:filcnaplo/theme/colors/colors.dart';
+import 'package:refilc/theme/colors/colors.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner_screen.i18n.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/grade_display.dart';

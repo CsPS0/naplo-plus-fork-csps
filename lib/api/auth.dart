@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:filcnaplo/api/client.dart';
-import 'package:filcnaplo/models/settings.dart';
+import 'package:refilc/api/client.dart';
+import 'package:refilc/models/settings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:refilc_plus/models/premium_result.dart';
 // import 'package:flutter/foundation.dart';

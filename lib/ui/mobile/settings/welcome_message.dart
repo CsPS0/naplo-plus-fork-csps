@@ -1,13 +1,13 @@
-import 'package:filcnaplo/api/providers/user_provider.dart';
-import 'package:filcnaplo/models/settings.dart';
-import 'package:filcnaplo/theme/colors/colors.dart';
-import 'package:filcnaplo_mobile_ui/common/panel/panel_button.dart';
+import 'package:refilc/api/providers/user_provider.dart';
+import 'package:refilc/models/settings.dart';
+import 'package:refilc/theme/colors/colors.dart';
+import 'package:refilc_mobile_ui/common/panel/panel_button.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:refilc_plus/providers/premium_provider.dart';
 import 'package:refilc_plus/ui/mobile/premium/upsell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:filcnaplo_mobile_ui/screens/settings/settings_screen.i18n.dart';
+import 'package:refilc_mobile_ui/screens/settings/settings_screen.i18n.dart';
 import 'package:provider/provider.dart';
 import 'package:i18n_extension/i18n_extension.dart';
 

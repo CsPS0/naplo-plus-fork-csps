@@ -1,5 +1,5 @@
-import 'package:filcnaplo/icons/filc_icons.dart';
-import 'package:filcnaplo_mobile_ui/premium/plus_screen.dart';
+import 'package:refilc/icons/filc_icons.dart';
+import 'package:refilc_mobile_ui/premium/plus_screen.dart';
 import 'package:flutter/material.dart';
 
 enum PremiumFeature {

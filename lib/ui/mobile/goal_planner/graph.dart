@@ -1,9 +1,9 @@
 import 'dart:math';
 
-import 'package:filcnaplo/helpers/average_helper.dart';
-import 'package:filcnaplo/models/settings.dart';
-import 'package:filcnaplo/theme/colors/colors.dart';
-import 'package:filcnaplo_kreta_api/models/grade.dart';
+import 'package:refilc/helpers/average_helper.dart';
+import 'package:refilc/models/settings.dart';
+import 'package:refilc/theme/colors/colors.dart';
+import 'package:refilc_kreta_api/models/grade.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/graph.i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';

@@ -10,10 +10,10 @@
  *  - `best` should be configurable
  */
 import 'dart:math';
-import 'package:filcnaplo_kreta_api/models/category.dart';
-import 'package:filcnaplo_kreta_api/models/grade.dart';
-import 'package:filcnaplo_kreta_api/models/subject.dart';
-import 'package:filcnaplo_kreta_api/models/teacher.dart';
+import 'package:refilc_kreta_api/models/category.dart';
+import 'package:refilc_kreta_api/models/grade.dart';
+import 'package:refilc_kreta_api/models/subject.dart';
+import 'package:refilc_kreta_api/models/teacher.dart';
 import 'package:flutter/foundation.dart' show listEquals;
 
 /// Generate list of grades that achieve the wanted goal.

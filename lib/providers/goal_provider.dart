@@ -1,7 +1,7 @@
-import 'package:filcnaplo/api/providers/database_provider.dart';
-import 'package:filcnaplo/api/providers/user_provider.dart';
-import 'package:filcnaplo_kreta_api/models/subject.dart';
-import 'package:filcnaplo_kreta_api/providers/grade_provider.dart';
+import 'package:refilc/api/providers/database_provider.dart';
+import 'package:refilc/api/providers/user_provider.dart';
+import 'package:refilc_kreta_api/models/subject.dart';
+import 'package:refilc_kreta_api/providers/grade_provider.dart';
 import 'package:flutter/widgets.dart';
 
 class GoalProvider extends ChangeNotifier {

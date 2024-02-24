@@ -1,7 +1,7 @@
-import 'package:filcnaplo/models/settings.dart';
-import 'package:filcnaplo/theme/colors/colors.dart';
-import 'package:filcnaplo_mobile_ui/common/panel/panel.dart';
-// import 'package:filcnaplo_mobile_ui/common/panel/panel_button.dart';
+import 'package:refilc/models/settings.dart';
+import 'package:refilc/theme/colors/colors.dart';
+import 'package:refilc_mobile_ui/common/panel/panel.dart';
+// import 'package:refilc_mobile_ui/common/panel/panel_button.dart';
 import 'package:refilc_plus/helpers/app_icon_helper.dart';
 // import 'package:refilc_plus/models/premium_scopes.dart';
 // import 'package:refilc_plus/providers/premium_provider.dart';

@@ -1,4 +1,4 @@
-import 'package:filcnaplo/models/settings.dart';
+import 'package:refilc/models/settings.dart';
 import 'package:refilc_plus/api/auth.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:flutter/widgets.dart';
