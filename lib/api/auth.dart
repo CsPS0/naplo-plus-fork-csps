@@ -20,14 +20,39 @@ class PremiumAuth {
 
   PremiumAuth({required SettingsProvider settings}) : _settings = settings;
 
+  // initAuth() {
+  //   try {
+  //     _sub ??= uriLinkStream.listen(
+  //       (Uri? uri) {
+  //         if (uri != null) {
+  //           final accessToken = uri.queryParameters['access_token'];
+  //           if (accessToken != null) {
+  //             finishAuth(accessToken);
+  //           }
+  //         }
+  //       },
+  //       onError: (err) {
+  //         log("ERROR: initAuth: $err");
+  //       },
+  //     );
+
+  //     launchUrl(
+  //       Uri.parse(FilcAPI.plusAuthLogin),
+  //       mode: LaunchMode.externalApplication,
+  //     );
+  //   } catch (err, sta) {
+  //     log("ERROR: initAuth: $err\n$sta");
+  //   }
+  // }
+
   initAuth() {
     try {
       _sub ??= uriLinkStream.listen(
         (Uri? uri) {
           if (uri != null) {
-            final accessToken = uri.queryParameters['access_token'];
-            if (accessToken != null) {
-              finishAuth(accessToken);
+            final sessionId = uri.queryParameters['session_id'];
+            if (sessionId != null) {
+              finishAuth(sessionId);
             }
           }
         },
@@ -37,7 +62,7 @@ class PremiumAuth {
       );
 
       launchUrl(
-        Uri.parse(FilcAPI.plusAuthLogin),
+        Uri.parse("${FilcAPI.payment}/stripe-create-checkout?product=asdasd"),
         mode: LaunchMode.externalApplication,
       );
     } catch (err, sta) {
@@ -45,14 +70,34 @@ class PremiumAuth {
     }
   }
 
-  Future<bool> finishAuth(String accessToken) async {
+  // Future<bool> finishAuth(String accessToken) async {
+  //   try {
+  //     // final res = await http.get(Uri.parse(
+  //     //     "${FilcAPI.plusScopes}?access_token=${Uri.encodeComponent(accessToken)}"));
+  //     // final scopes =
+  //     //     ((jsonDecode(res.body) as Map)["scopes"] as List).cast<String>();
+  //     // log("[INFO] Premium auth finish: ${scopes.join(',')}");
+  //     await _settings.update(premiumAccessToken: accessToken);
+  //     final result = await refreshAuth();
+  //     // if (Platform.isAndroid) updateWidget();
+  //     return result;
+  //   } catch (err, sta) {
+  //     log("[ERROR] reFilc+ auth failed: $err\n$sta");
+  //   }
+
+  //   await _settings.update(premiumAccessToken: "", premiumScopes: []);
+  //   // if (Platform.isAndroid) updateWidget();
+  //   return false;
+  // }
+
+  Future<bool> finishAuth(String sessionId) async {
     try {
       // final res = await http.get(Uri.parse(
       //     "${FilcAPI.plusScopes}?access_token=${Uri.encodeComponent(accessToken)}"));
       // final scopes =
       //     ((jsonDecode(res.body) as Map)["scopes"] as List).cast<String>();
       // log("[INFO] Premium auth finish: ${scopes.join(',')}");
-      await _settings.update(premiumAccessToken: accessToken);
+      await _settings.update(plusSessionId: sessionId);
       final result = await refreshAuth();
       // if (Platform.isAndroid) updateWidget();
       return result;
@@ -60,7 +105,7 @@ class PremiumAuth {
       log("[ERROR] reFilc+ auth failed: $err\n$sta");
     }
 
-    await _settings.update(premiumAccessToken: "", premiumScopes: []);
+    await _settings.update(plusSessionId: "", premiumScopes: []);
     // if (Platform.isAndroid) updateWidget();
     return false;
   }
