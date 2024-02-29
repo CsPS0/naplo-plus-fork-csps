@@ -123,7 +123,7 @@ class PremiumAuth {
 
   Future<bool> refreshAuth({bool removePremium = false}) async {
     if (!removePremium) {
-      if (_settings.premiumAccessToken == "") {
+      if (_settings.plusSessionId == "") {
         await _settings.update(premiumScopes: [], premiumLogin: "");
         return false;
       }
@@ -140,11 +140,11 @@ class PremiumAuth {
         try {
           if (kDebugMode) {
             print(FilcAPI.plusActivation);
-            print(_settings.premiumAccessToken);
+            print(_settings.plusSessionId);
           }
 
           final res = await http.post(Uri.parse(FilcAPI.plusActivation), body: {
-            "access_token": _settings.premiumAccessToken,
+            "session_id": _settings.plusSessionId,
           });
 
           if (kDebugMode) print(res.body);
@@ -156,13 +156,16 @@ class PremiumAuth {
           if (res.body == "empty_sponsors") {
             throw "This user isn't sponsoring anyone currently!";
           }
+          if (res.body == "expired_subscription") {
+            throw "This user isn't a subscriber anymore!";
+          }
 
           final premium = PremiumResult.fromJson(jsonDecode(res.body) as Map);
 
           // successful activation of reFilc+
           log("[INFO] reFilc+ activated: ${premium.scopes.join(',')}");
           await _settings.update(
-            premiumAccessToken: premium.accessToken,
+            plusSessionId: premium.sessionId,
             premiumScopes: premium.scopes,
             premiumLogin: premium.login,
           );
@@ -178,7 +181,11 @@ class PremiumAuth {
 
     // activation of reFilc+ failed
     await _settings.update(
-        premiumAccessToken: "", premiumScopes: [], premiumLogin: "");
+      premiumAccessToken: "",
+      premiumScopes: [],
+      premiumLogin: "",
+      plusSessionId: "",
+    );
     return false;
   }
 }
