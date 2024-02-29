@@ -7,7 +7,7 @@ class PremiumScopes {
   // static const goalPlanner = "refilc.plus.GOAL_PLANNER";
   // static const changeAppIcon = "refilc.plus.CHANGE_APP_ICON";
 
-  // tier 1 (Kupak)
+  // tier 1 (Kupak) (reFilc+)
   static const maxTwoAccounts = "refilc.plus.MAX_TWO_ACCOUNTS";
   static const earlyAccess = "refilc.plus.EARLY_ACCESS";
   static const totalGradeCalculator = "refilc.plus.TOTAL_GRADE_CALCULATOR";
@@ -17,7 +17,7 @@ class PremiumScopes {
   // tier scope
   static const tierCap = "refilc.plus.tier.CAP";
 
-  // tier 2 (Tinta)
+  // tier 2 (Tinta) (reFilc+ Gold)
   static const noAccountLimit = "refilc.plus.NO_ACCOUNT_LIMIT";
   static const appIconChange = "refilc.plus.APP_ICON_CHANGE";
   static const liveActivityColor = "refilc.plus.LIVE_ACTIVITY_COLOR";
