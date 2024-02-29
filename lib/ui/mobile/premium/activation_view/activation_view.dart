@@ -6,7 +6,9 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class PremiumActivationView extends StatefulWidget {
-  const PremiumActivationView({super.key});
+  const PremiumActivationView({super.key, required this.product});
+
+  final String product;
 
   @override
   State<PremiumActivationView> createState() => _PremiumActivationViewState();
@@ -20,7 +22,7 @@ class _PremiumActivationViewState extends State<PremiumActivationView>
   @override
   void initState() {
     super.initState();
-    context.read<PremiumProvider>().auth.initAuth();
+    context.read<PremiumProvider>().auth.initAuth(product: widget.product);
 
     animation =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));

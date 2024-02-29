@@ -45,7 +45,7 @@ class PremiumAuth {
   //   }
   // }
 
-  initAuth() {
+  initAuth({required String product}) {
     try {
       _sub ??= uriLinkStream.listen(
         (Uri? uri) {
@@ -62,7 +62,7 @@ class PremiumAuth {
       );
 
       launchUrl(
-        Uri.parse("${FilcAPI.payment}/stripe-create-checkout?product=asdasd"),
+        Uri.parse("${FilcAPI.payment}/stripe-create-checkout?product=$product"),
         mode: LaunchMode.externalApplication,
       );
     } catch (err, sta) {

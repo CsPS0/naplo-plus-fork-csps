@@ -2,7 +2,6 @@ import 'package:refilc/theme/colors/colors.dart';
 import 'package:refilc_plus/providers/premium_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +24,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
       manualActivationLoading = true;
     });
     final result =
+        // ignore: use_build_context_synchronously
         await context.read<PremiumProvider>().auth.finishAuth(data.text!);
     setState(() {
       manualActivationLoading = false;
@@ -51,17 +51,51 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
         children: [
           const Spacer(),
           Center(
-            child: SvgPicture.asset(
-              "assets/images/github.svg",
+            child: Image.asset(
+              "assets/icons/ic_rounded.png",
               height: 64.0,
             ),
+            // child: SvgPicture.asset(
+            //   "assets/images/github.svg",
+            //   height: 64.0,
+            // ),
           ),
           const SizedBox(height: 32.0),
           const Text(
-            "Jelentkezz be a Gitbub felületén és adj hozzáférést a reFilc-nek, hogy aktiváld a reFilc+ szinted.",
+            "Válassz fizetési módot, majd folytasd a fizetést a Stripe felületén, hogy aktiváld az előfizetésed.",
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
           ),
+          // const SizedBox(height: 12.0),
+          // Card(
+          //   shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(14.0)),
+          //   child: const Padding(
+          //     padding: EdgeInsets.all(16.0),
+          //     child: Column(
+          //       crossAxisAlignment: CrossAxisAlignment.start,
+          //       children: [
+          //         Row(
+          //           children: [
+          //             Icon(FeatherIcons.alertTriangle,
+          //                 size: 20.0, color: Colors.orange),
+          //             SizedBox(width: 12.0),
+          //             Text(
+          //               "Figyelem!",
+          //               style: TextStyle(
+          //                   fontSize: 18.0, fontWeight: FontWeight.bold),
+          //             ),
+          //           ],
+          //         ),
+          //         SizedBox(height: 6.0),
+          //         Text(
+          //           "Az automatikus visszairányítás az alkalmazásba nem mindig működik. Ebben az esetben kérjük nyomd meg lent a \"Manuális aktiválás\" gombot!",
+          //           style: TextStyle(fontSize: 16.0),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           const SizedBox(height: 12.0),
           Card(
             shape: RoundedRectangleBorder(
@@ -85,37 +119,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                   ),
                   SizedBox(height: 6.0),
                   Text(
-                    "Csak akkor érzékeli a reFilc a támogatói státuszod, ha Github-on nem állítod privátra!",
-                    style: TextStyle(fontSize: 16.0),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 12.0),
-          Card(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14.0)),
-            child: const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(FeatherIcons.alertTriangle,
-                          size: 20.0, color: Colors.orange),
-                      SizedBox(width: 12.0),
-                      Text(
-                        "Figyelem!",
-                        style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 6.0),
-                  Text(
-                    "Az aktiválás azonnal történik, ha már támogató vagy, viszont ha még nem, előbb nyomj a neked tetsző szintre, majd fizesd ki Github-on és utána kapcsold össze a fiókod!",
+                    "Az aktiválás azonnal történik, amint kifizetted a szolgáltatás díját. A szolgáltatás automatikusan megújul, lemondásra a beállításokban lesz lehetőséget.",
                     style: TextStyle(fontSize: 16.0),
                   ),
                 ],
@@ -132,7 +136,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Ha bejelentkezés után a Github nem irányít vissza az alkalmazásba automatikusan, aktiválhatod a támogatásod a hitelesítő token-nel.",
+                    "Ha fizetés után a Stripe nem irányít vissza az alkalmazásba automatikusan, aktiválhatod a támogatásod a munkamenet azonosítóval, melyet kimásolhatsz a hibás URL \"session_id\" paraméteréből.",
                     style:
                         TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500),
                   ),
@@ -150,15 +154,15 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                       ),
                       icon: manualActivationLoading
                           ? const SizedBox(
-                              child: CircularProgressIndicator(),
                               height: 16.0,
                               width: 16.0,
+                              child: CircularProgressIndicator(),
                             )
                           : const Icon(FeatherIcons.key, size: 20.0),
                       label: const Padding(
                         padding: EdgeInsets.only(left: 8.0),
                         child: Text(
-                          "Aktiválás tokennel",
+                          "Aktiválás azonosítóval",
                           style: TextStyle(fontSize: 16.0),
                         ),
                       ),
