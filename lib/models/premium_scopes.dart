@@ -24,6 +24,7 @@ class PremiumScopes {
   static const customFont = "refilc.plus.CUSTOM_FONT";
   static const timetableNotes = "refilc.plus.TIMETABLE_NOTES";
   static const unlimitedGoalPlanner = "refilc.plus.UNLIMITED_GOAL_PLANNER";
+  static const calendarSync = "refilc.plus.CALENDAR_SYNC";
   // tier scope
   static const tierInk = "refilc.plus.tier.INK";
 
