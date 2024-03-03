@@ -150,14 +150,17 @@ class PremiumAuth {
           if (kDebugMode) print(res.body);
 
           if (res.body == "") throw "empty body";
-          if (res.body == "Unauthorized") {
-            throw "User is not autchenticated to Github!";
-          }
-          if (res.body == "empty_sponsors") {
-            throw "This user isn't sponsoring anyone currently!";
-          }
+          // if (res.body == "Unauthorized") {
+          //   throw "User is not autchenticated to Github!";
+          // }
+          // if (res.body == "empty_sponsors") {
+          //   throw "This user isn't sponsoring anyone currently!";
+          // }
           if (res.body == "expired_subscription") {
             throw "This user isn't a subscriber anymore!";
+          }
+          if (res.body == "no_subscription") {
+            throw "This user isn't a subscriber!";
           }
 
           final premium = PremiumResult.fromJson(jsonDecode(res.body) as Map);
