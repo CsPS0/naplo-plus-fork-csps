@@ -16,8 +16,7 @@ class WelcomeMessagePanelButton extends StatelessWidget {
   late SettingsProvider settingsProvider;
   late UserProvider user;
 
-  WelcomeMessagePanelButton(this.settingsProvider, this.user, {Key? key})
-      : super(key: key);
+  WelcomeMessagePanelButton(this.settingsProvider, this.user, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +35,7 @@ class WelcomeMessagePanelButton extends StatelessWidget {
               context: context, feature: PremiumFeature.welcomeMessage);
           return;
         }
+        
         showDialog(
             context: context,
             builder: (context) => WelcomeMessageEditor(settingsProvider));
@@ -74,7 +74,7 @@ class WelcomeMessagePanelButton extends StatelessWidget {
 class WelcomeMessageEditor extends StatefulWidget {
   late SettingsProvider settingsProvider;
 
-  WelcomeMessageEditor(this.settingsProvider, {Key? key}) : super(key: key);
+  WelcomeMessageEditor(this.settingsProvider, {super.key});
 
   @override
   State<WelcomeMessageEditor> createState() => _WelcomeMessageEditorState();
