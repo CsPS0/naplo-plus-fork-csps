@@ -23,6 +23,7 @@ enum PremiumFeature {
   fontChange, // sponge
   goalPlanner, // sponge
   gradeRarities,
+  calendarSync,
 }
 
 enum PremiumFeatureLevel {
@@ -30,6 +31,9 @@ enum PremiumFeatureLevel {
   cap,
   ink,
   sponge,
+  // new new new
+  basic,
+  gold,
 }
 
 const Map<PremiumFeature, PremiumFeatureLevel> _featureLevels = {
@@ -42,18 +46,18 @@ const Map<PremiumFeature, PremiumFeatureLevel> _featureLevels = {
   PremiumFeature.weeklytimetable: PremiumFeatureLevel.old,
   PremiumFeature.widget: PremiumFeatureLevel.old,
   // new things
-  PremiumFeature.moreAccounts: PremiumFeatureLevel.cap,
-  PremiumFeature.betaReleases: PremiumFeatureLevel.cap,
-  PremiumFeature.welcomeMessage: PremiumFeatureLevel.cap,
-  PremiumFeature.selfNotes: PremiumFeatureLevel.cap,
-  PremiumFeature.gradeCalculation: PremiumFeatureLevel.ink,
-  PremiumFeature.liveActivity: PremiumFeatureLevel.ink,
-  PremiumFeature.timetableNotes: PremiumFeatureLevel.ink,
-  PremiumFeature.iconChange: PremiumFeatureLevel.sponge,
-  PremiumFeature.fontChange: PremiumFeatureLevel.sponge,
-  PremiumFeature.goalPlanner: PremiumFeatureLevel.sponge,
-
-  PremiumFeature.gradeRarities: PremiumFeatureLevel.old,
+  PremiumFeature.moreAccounts: PremiumFeatureLevel.basic,
+  PremiumFeature.betaReleases: PremiumFeatureLevel.basic,
+  PremiumFeature.welcomeMessage: PremiumFeatureLevel.basic,
+  PremiumFeature.selfNotes: PremiumFeatureLevel.basic,
+  PremiumFeature.gradeCalculation: PremiumFeatureLevel.basic,
+  PremiumFeature.liveActivity: PremiumFeatureLevel.gold,
+  PremiumFeature.timetableNotes: PremiumFeatureLevel.gold,
+  PremiumFeature.iconChange: PremiumFeatureLevel.gold,
+  PremiumFeature.fontChange: PremiumFeatureLevel.gold,
+  PremiumFeature.goalPlanner: PremiumFeatureLevel.gold,
+  PremiumFeature.gradeRarities: PremiumFeatureLevel.basic,
+  PremiumFeature.calendarSync: PremiumFeatureLevel.gold,
 };
 
 const Map<PremiumFeature, String> _featureAssets = {
@@ -82,6 +86,7 @@ const Map<PremiumFeature, String> _featureAssets = {
 
   PremiumFeature.gradeRarities:
       "assets/images/premium_banner/grade_rarities.png",
+  PremiumFeature.calendarSync: "assets/images/premium_banner/calendar_sync.png",
 };
 
 const Map<PremiumFeature, String> _featureTitles = {
@@ -107,8 +112,8 @@ const Map<PremiumFeature, String> _featureTitles = {
   PremiumFeature.iconChange: "Ez aztán különleges!",
   PremiumFeature.fontChange: "Woah! Micsoda gyönyörű betűk!",
   PremiumFeature.goalPlanner: "Még több javaslat kell?",
-
   PremiumFeature.gradeRarities: "Nem epikus, hanem ultraszuper?",
+  PremiumFeature.calendarSync: "Még a naptáradba is kell?!",
 };
 
 const Map<PremiumFeature, String> _featureDescriptions = {
@@ -132,25 +137,25 @@ const Map<PremiumFeature, String> _featureDescriptions = {
   PremiumFeature.moreAccounts:
       "Minden támogatási szinttel egyre magasabb a limit.",
   PremiumFeature.betaReleases:
-      "Támogass Kupak szinten, hogy előre megkapd a béta frissítéseket.",
+      "Fizess elő reFilc+-ra, hogy előre megkapd a béta frissítéseket.",
   PremiumFeature.welcomeMessage:
-      "Az egyedi üdvözléshez elég csupán a Kupak szint!",
+      "Az egyedi üdvözléshez elég csupán a legalsó szint!",
   PremiumFeature.selfNotes:
-      "Támogass Kupak szinten, és jegyezd fel minden fontos dolgod.",
+      "Támogass minket, és jegyezd fel minden fontos dolgod.",
   PremiumFeature.gradeCalculation:
-      "Tinta szinttől egyszerűbb kiszámolnod a tervezett átlagod.",
+      "reFilc+-al egyszerűbb kiszámolnod a tervezett átlagod.",
   PremiumFeature.liveActivity:
-      "Tinta szintű támogatással átszínezhetsz bármilyenre.",
+      "Gold szintű támogatással átszínezhetsz bármilyenre.",
   PremiumFeature.timetableNotes:
-      "Nincs több ilyen kérdés, ha Tinta szinten támogatsz.",
+      "Nincs több ilyen kérdés, ha Gold szinten támogatsz.",
   PremiumFeature.iconChange:
-      "Támogass Szivacs szinten az alkalmazás ikonjának megváltoztatásához.",
+      "Fizess elő Gold szintre az alkalmazás ikonjának megváltoztatásához.",
   PremiumFeature.fontChange:
-      "Szivacs szintű támogatással megváltoztathatod a betűtípust is.",
+      "Gold szintű támogatással megváltoztathatod a betűtípust is.",
   PremiumFeature.goalPlanner:
-      "Támogass Szivacs szinten és használd ki a cél kitűzés minden funkcióját!",
-
-  PremiumFeature.gradeRarities: "A reFilc+ Tinta szintjével ez is elérhető!",
+      "Támogass Gold szinten és használd ki a cél kitűzés minden funkcióját!",
+  PremiumFeature.gradeRarities: "A reFilc+ alap szintjével ez is elérhető!",
+  PremiumFeature.calendarSync: "Szinkronizáld az órarended reFilc+ Gold-al!",
 };
 
 class PremiumLockedFeatureUpsell extends StatelessWidget {
@@ -170,8 +175,8 @@ class PremiumLockedFeatureUpsell extends StatelessWidget {
           ? FilcIcons.tinta
           : FilcIcons.tinta;
   Color _getColor(BuildContext context) =>
-      _featureLevels[feature] == PremiumFeatureLevel.cap
-          ? const Color(0xffC8A708)
+      _featureLevels[feature] == PremiumFeatureLevel.gold
+          ? const Color(0xFFC89B08)
           : Theme.of(context).brightness == Brightness.light
               ? const Color(0xff691A9B)
               : const Color(0xffA66FC8);

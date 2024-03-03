@@ -15,6 +15,9 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:refilc_mobile_ui/common/widgets/custom_segmented_control.dart';
 import 'package:refilc_mobile_ui/screens/settings/settings_screen.i18n.dart';
+import 'package:refilc_plus/models/premium_scopes.dart';
+import 'package:refilc_plus/providers/premium_provider.dart';
+import 'package:refilc_plus/ui/mobile/premium/upsell.dart';
 
 class MenuCalendarSync extends StatelessWidget {
   const MenuCalendarSync({
@@ -29,6 +32,12 @@ class MenuCalendarSync extends StatelessWidget {
   Widget build(BuildContext context) {
     return PanelButton(
       onPressed: () async {
+        if (!Provider.of<PremiumProvider>(context, listen: false)
+            .hasScope(PremiumScopes.calendarSync)) {
+          return PremiumLockedFeatureUpsell.show(
+              context: context, feature: PremiumFeature.calendarSync);
+        }
+
         Navigator.of(context, rootNavigator: true).push(CupertinoPageRoute(
             builder: (context) => const CalendarSyncScreen()));
       },
