@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:refilc/api/providers/database_provider.dart';
 import 'package:refilc/api/providers/user_provider.dart';
 import 'package:refilc/helpers/average_helper.dart';
@@ -26,7 +28,7 @@ import 'graph.dart';
 class GoalStateScreen extends StatefulWidget {
   final GradeSubject subject;
 
-  const GoalStateScreen({Key? key, required this.subject}) : super(key: key);
+  const GoalStateScreen({super.key, required this.subject});
 
   @override
   State<GoalStateScreen> createState() => _GoalStateScreenState();
@@ -394,8 +396,7 @@ class _GoalStateScreenState extends State<GoalStateScreen> {
                                         ),
                                         const SizedBox(width: 5.0),
                                         Text(
-                                          avgDifference.toStringAsFixed(2) +
-                                              '%',
+                                          '${avgDifference.toStringAsFixed(2)}%',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: avgDifference.isNegative

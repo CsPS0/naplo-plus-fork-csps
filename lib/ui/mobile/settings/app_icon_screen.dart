@@ -12,8 +12,7 @@ import 'package:provider/provider.dart';
 import 'app_icon_screen.i18n.dart';
 
 class PremiumCustomAppIconMenu extends StatelessWidget {
-  const PremiumCustomAppIconMenu({Key? key, required this.settings})
-      : super(key: key);
+  const PremiumCustomAppIconMenu({super.key, required this.settings});
 
   final SettingsProvider settings;
 
@@ -43,7 +42,7 @@ class PremiumCustomAppIconMenu extends StatelessWidget {
 }
 
 class ModifyAppIcon extends StatefulWidget {
-  const ModifyAppIcon({Key? key}) : super(key: key);
+  const ModifyAppIcon({super.key});
 
   @override
   State<ModifyAppIcon> createState() => _ModifyAppIconState();
@@ -167,14 +166,14 @@ class _ModifyAppIconState extends State<ModifyAppIcon> {
 
 class AppIconItem extends StatelessWidget {
   const AppIconItem({
-    Key? key,
+    super.key,
     required this.iconName,
     required this.iconPath,
     required this.displayName,
     this.description,
     required this.selected,
     required this.selectCallback,
-  }) : super(key: key);
+  });
 
   final String iconName;
   final String iconPath;

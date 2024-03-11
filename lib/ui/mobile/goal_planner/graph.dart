@@ -10,18 +10,17 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:provider/provider.dart';
 
 class GoalGraph extends StatefulWidget {
-  const GoalGraph(this.data, {Key? key, this.dayThreshold = 7, this.classAvg})
-      : super(key: key);
+  const GoalGraph(this.data, {super.key, this.dayThreshold = 7, this.classAvg});
 
   final List<Grade> data;
   final int dayThreshold;
   final double? classAvg;
 
   @override
-  _GoalGraphState createState() => _GoalGraphState();
+  GoalGraphState createState() => GoalGraphState();
 }
 
-class _GoalGraphState extends State<GoalGraph> {
+class GoalGraphState extends State<GoalGraph> {
   late SettingsProvider settings;
 
   List<FlSpot> getSpots(List<Grade> data) {
@@ -135,6 +134,7 @@ class _GoalGraphState extends State<GoalGraph> {
           )
         : ClipRect(
             child: SizedBox(
+              height: 158,
               child: subjectSpots.length > 1
                   ? Padding(
                       padding: const EdgeInsets.only(top: 8.0, right: 8.0),
@@ -242,7 +242,6 @@ class _GoalGraphState extends State<GoalGraph> {
                       ),
                     )
                   : null,
-              height: 158,
             ),
           );
   }

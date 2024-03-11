@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class GradeDisplay extends StatelessWidget {
-  const GradeDisplay({Key? key, required this.grade}) : super(key: key);
+  const GradeDisplay({super.key, required this.grade});
 
   final int grade;
 

@@ -8,12 +8,11 @@ enum RouteMark { recommended, fastest }
 
 class RouteOption extends StatelessWidget {
   const RouteOption(
-      {Key? key,
+      {super.key,
       required this.plan,
       this.mark,
       this.selected = false,
-      required this.onSelected})
-      : super(key: key);
+      required this.onSelected});
 
   final Plan plan;
   final RouteMark? mark;
@@ -144,10 +143,10 @@ class RouteOption extends StatelessWidget {
 
 class RouteOptionRow extends StatelessWidget {
   const RouteOptionRow({
-    Key? key,
+    super.key,
     required this.plan,
     this.mark,
-  }) : super(key: key);
+  });
 
   final Plan plan;
   final RouteMark? mark;

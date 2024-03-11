@@ -419,6 +419,7 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
                               goalPinDates,
                               userId: user.id!);
 
+                          // ignore: use_build_context_synchronously
                           Navigator.of(context).pop();
                         },
                         fillColor: Theme.of(context).colorScheme.primary,

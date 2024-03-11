@@ -28,6 +28,7 @@ class AppIconHelper {
       }
     } else if (Platform.isAndroid) {
       // change icon on android
+      // ignore: no_leading_underscores_for_local_identifiers
       final _androidDynamicIconPlugin = AndroidDynamicIcon();
       await _androidDynamicIconPlugin.changeIcon(
         bundleId: 'hu.refilc.naplo',

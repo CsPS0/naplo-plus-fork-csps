@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
@@ -23,10 +22,10 @@ class GradeRarityTextSetting extends StatefulWidget {
   final List<String> defaultRarities;
 
   @override
-  _GradeRarityTextSettingState createState() => _GradeRarityTextSettingState();
+  GradeRarityTextSettingState createState() => GradeRarityTextSettingState();
 }
 
-class _GradeRarityTextSettingState extends State<GradeRarityTextSetting> {
+class GradeRarityTextSettingState extends State<GradeRarityTextSetting> {
   late SettingsProvider settings;
   late DatabaseProvider db;
   late UserProvider user;

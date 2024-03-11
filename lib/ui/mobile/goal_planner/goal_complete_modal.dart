@@ -10,13 +10,13 @@ import 'package:provider/provider.dart';
 class GoalCompleteModal extends StatelessWidget {
   const GoalCompleteModal(
     this.subject, {
-    Key? key,
+    super.key,
     required this.user,
     required this.database,
     required this.goalAverage,
     required this.beforeAverage,
     required this.averageDifference,
-  }) : super(key: key);
+  });
 
   final UserProvider user;
   final DatabaseProvider database;
@@ -120,7 +120,7 @@ class GoalCompleteModal extends StatelessWidget {
                 ),
                 Text(
                   'improved_by'.i18n.fill([
-                    averageDifference.toStringAsFixed(2) + '%',
+                    '${averageDifference.toStringAsFixed(2)}%',
                   ]),
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -237,6 +237,7 @@ class GoalCompleteModal extends StatelessWidget {
     double avgDifference = ((goalAvg - beforeAvg) / beforeAvg.abs()) * 100;
 
     return showDialog<T?>(
+      // ignore: use_build_context_synchronously
       context: context,
       builder: (context) => GoalCompleteModal(
         subject,

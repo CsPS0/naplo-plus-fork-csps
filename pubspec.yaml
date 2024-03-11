@@ -35,6 +35,8 @@ dependencies:
   flutter_dynamic_icon: ^2.1.0
   android_dynamic_icon: ^1.0.1
   i18n_extension: ^11.0.12
+  http: ^1.2.0
+  fl_chart: ^0.45.1
 
 dev_dependencies:
   flutter_lints: ^3.0.1

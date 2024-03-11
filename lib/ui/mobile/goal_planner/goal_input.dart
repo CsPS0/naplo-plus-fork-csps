@@ -5,11 +5,10 @@ import 'package:provider/provider.dart';
 
 class GoalInput extends StatelessWidget {
   const GoalInput(
-      {Key? key,
+      {super.key,
       required this.currentAverage,
       required this.value,
-      required this.onChanged})
-      : super(key: key);
+      required this.onChanged});
 
   final double currentAverage;
   final double value;

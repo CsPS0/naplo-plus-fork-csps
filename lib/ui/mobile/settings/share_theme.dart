@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class PremiumShareTheme extends StatefulWidget {
-  const PremiumShareTheme({Key? key}) : super(key: key);
+  const PremiumShareTheme({super.key});
 
   @override
   State<PremiumShareTheme> createState() => _PremiumShareThemeState();
