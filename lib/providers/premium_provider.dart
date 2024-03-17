@@ -1,14 +1,14 @@
 import 'package:refilc/models/settings.dart';
 import 'package:refilc_plus/api/auth.dart';
-import 'package:refilc_plus/models/premium_scopes.dart';
+// import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:flutter/widgets.dart';
 
 class PremiumProvider extends ChangeNotifier {
   final SettingsProvider _settings;
   List<String> get scopes => _settings.premiumScopes;
-  // bool hasScope(String scope) => false;
-  bool hasScope(String scope) =>
-      scopes.contains(scope) || scopes.contains(PremiumScopes.all);
+  bool hasScope(String scope) => false;
+  // bool hasScope(String scope) =>
+  //     scopes.contains(scope) || scopes.contains(PremiumScopes.all);
   String get accessToken => _settings.premiumAccessToken;
   String get login => _settings.premiumLogin;
   bool get hasPremium =>
