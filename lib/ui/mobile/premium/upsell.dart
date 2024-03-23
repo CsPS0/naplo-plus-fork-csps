@@ -1,4 +1,6 @@
+import 'package:flutter_svg/svg.dart';
 import 'package:refilc/icons/filc_icons.dart';
+import 'package:refilc_mobile_ui/common/bottom_sheet_menu/rounded_bottom_sheet.dart';
 import 'package:refilc_mobile_ui/premium/plus_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -158,16 +160,140 @@ const Map<PremiumFeature, String> _featureDescriptions = {
   PremiumFeature.calendarSync: "Szinkronizáld az órarended reFilc+ Gold-al!",
 };
 
-class PremiumLockedFeatureUpsell extends StatelessWidget {
-  const PremiumLockedFeatureUpsell({super.key, required this.feature});
+// class PremiumLockedFeatureUpsell extends StatelessWidget {
+//   const PremiumLockedFeatureUpsell({super.key, required this.feature});
 
-  static void show(
-          {required BuildContext context, required PremiumFeature feature}) =>
-      showDialog(
-          context: context,
-          builder: (context) => PremiumLockedFeatureUpsell(feature: feature));
+//   static void show(
+//           {required BuildContext context, required PremiumFeature feature}) =>
+//       showRoundedModalBottomSheet(context,
+//           child: PremiumLockedFeatureUpsell(feature: feature));
+
+//   final PremiumFeature feature;
+
+//   IconData _getIcon() => _featureLevels[feature] == PremiumFeatureLevel.cap
+//       ? FilcIcons.kupak
+//       : _featureLevels[feature] == PremiumFeatureLevel.ink
+//           ? FilcIcons.tinta
+//           : FilcIcons.tinta;
+//   Color _getColor(BuildContext context) =>
+//       _featureLevels[feature] == PremiumFeatureLevel.gold
+//           ? const Color(0xFFC89B08)
+//           : Theme.of(context).brightness == Brightness.light
+//               ? const Color(0xff691A9B)
+//               : const Color(0xffA66FC8);
+//   String? _getAsset() => _featureAssets[feature];
+//   String _getTitle() => _featureTitles[feature]!;
+//   String _getDescription() => _featureDescriptions[feature]!;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final Color color = _getColor(context);
+
+//     return Dialog(
+//       child: Padding(
+//         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
+//         child: Column(
+//           mainAxisSize: MainAxisSize.min,
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             // Title Bar
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 Padding(
+//                   padding: const EdgeInsets.only(left: 8.0),
+//                   child: Icon(_getIcon()),
+//                 ),
+//                 IconButton(
+//                   onPressed: () => Navigator.of(context).pop(),
+//                   icon: const Icon(Icons.close),
+//                 ),
+//               ],
+//             ),
+
+//             // Image showcase
+//             if (_getAsset() != null)
+//               Padding(
+//                 padding: const EdgeInsets.only(top: 8.0),
+//                 child: Image.asset(_getAsset()!),
+//               ),
+
+//             // Dialog title
+//             Padding(
+//               padding: const EdgeInsets.only(top: 12.0),
+//               child: Text(
+//                 _getTitle(),
+//                 style: const TextStyle(
+//                   fontWeight: FontWeight.bold,
+//                   fontSize: 20.0,
+//                 ),
+//               ),
+//             ),
+
+//             // Dialog description
+//             Padding(
+//               padding: const EdgeInsets.only(top: 8.0),
+//               child: Text(
+//                 _getDescription(),
+//                 style: const TextStyle(
+//                   fontSize: 16.0,
+//                 ),
+//               ),
+//             ),
+
+//             // CTA button
+//             Padding(
+//               padding: const EdgeInsets.only(top: 8.0),
+//               child: SizedBox(
+//                 width: double.infinity,
+//                 child: TextButton(
+//                   style: ButtonStyle(
+//                       backgroundColor:
+//                           MaterialStatePropertyAll(color.withOpacity(.25)),
+//                       foregroundColor: MaterialStatePropertyAll(color),
+//                       overlayColor:
+//                           MaterialStatePropertyAll(color.withOpacity(.1))),
+//                   onPressed: () {
+//                     Navigator.of(context, rootNavigator: true)
+//                         .push(MaterialPageRoute(builder: (context) {
+//                       return const PlusScreen();
+//                     }));
+//                   },
+//                   child: const Text(
+//                     "Vigyél oda!",
+//                     style: TextStyle(
+//                       fontWeight: FontWeight.bold,
+//                       fontSize: 18.0,
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class PlusLockedFeaturePopup extends StatelessWidget {
+  const PlusLockedFeaturePopup({super.key, required this.feature});
+
+  static void show({
+    required BuildContext context,
+    required PremiumFeature feature,
+  }) =>
+      showRoundedModalBottomSheet(
+        context,
+        child: PlusLockedFeaturePopup(
+          feature: feature,
+        ),
+        showHandle: false,
+      );
 
   final PremiumFeature feature;
+
+  PremiumFeatureLevel? _getFeatureLevel() => _featureLevels[feature];
 
   IconData _getIcon() => _featureLevels[feature] == PremiumFeatureLevel.cap
       ? FilcIcons.kupak
@@ -186,90 +312,180 @@ class PremiumLockedFeatureUpsell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color color = _getColor(context);
+    final bool isGold = _getFeatureLevel() == PremiumFeatureLevel.gold;
 
-    return Dialog(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Title Bar
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Icon(_getIcon()),
-                ),
-                IconButton(
-                  onPressed: () => Navigator.of(context).pop(),
-                  icon: const Icon(Icons.close),
-                ),
-              ],
-            ),
-
-            // Image showcase
-            if (_getAsset() != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Image.asset(_getAsset()!),
-              ),
-
-            // Dialog title
-            Padding(
-              padding: const EdgeInsets.only(top: 12.0),
-              child: Text(
-                _getTitle(),
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-
-            // Dialog description
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Text(
-                _getDescription(),
-                style: const TextStyle(
-                  fontSize: 16.0,
-                ),
-              ),
-            ),
-
-            // CTA button
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: SizedBox(
-                width: double.infinity,
-                child: TextButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(color.withOpacity(.25)),
-                      foregroundColor: MaterialStatePropertyAll(color),
-                      overlayColor:
-                          MaterialStatePropertyAll(color.withOpacity(.1))),
-                  onPressed: () {
-                    Navigator.of(context, rootNavigator: true)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return const PlusScreen();
-                    }));
-                  },
-                  child: const Text(
-                    "Vigyél oda!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
+    return Container(
+      decoration: BoxDecoration(
+        color: isGold ? const Color(0xFFF7EDD9) : const Color(0xFFDCDAF7),
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(12.0),
+        ),
+      ),
+      child: Stack(
+        children: [
+          SvgPicture.asset(
+            "assets/svg/mesh_bg.svg",
+            // ignore: deprecated_member_use
+            color: isGold ? const Color(0xFFf0dcb6) : const Color(0xFFbcb8f0),
+            width: MediaQuery.of(context).size.width,
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 40,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: isGold
+                          ? const Color(0xFF341C01)
+                          : const Color(0xFF130667),
+                      borderRadius: BorderRadius.circular(
+                        2.0,
+                      ),
                     ),
                   ),
-                ),
+                  const SizedBox(
+                    height: 38.0,
+                  ),
+                  Image.asset(
+                    'assets/images/plus_${isGold ? 'gold' : 'standard'}.png',
+                    width: 66,
+                    height: 66,
+                  ),
+                  const SizedBox(
+                    height: 55.0,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: const Color(
+                        0xFFF7F9FC,
+                      ).withOpacity(0.7),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(12.0),
+                        bottom: Radius.circular(6.0),
+                      ),
+                    ),
+                    padding: const EdgeInsets.all(14.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          isGold ? 'reFilc+ Gold' : 'reFilc+',
+                          style: TextStyle(
+                            color: isGold
+                                ? const Color(0xFFAD7637)
+                                : const Color(0xFF7463E2),
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 12.0,
+                        ),
+                        Text(
+                          _getTitle(),
+                          style: TextStyle(
+                            color: isGold
+                                ? const Color(0xFF341C01)
+                                : const Color(0xFF150D4E),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8.0,
+                        ),
+                        Text(
+                          _getDescription(),
+                          style: TextStyle(
+                            color: isGold
+                                ? const Color(0xFF341C01)
+                                : const Color(0xFF150D4E),
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 6.0,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: const Color(
+                        0xFFF7F9FC,
+                      ).withOpacity(0.7),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(6.0),
+                        bottom: Radius.circular(12.0),
+                      ),
+                    ),
+                    padding: const EdgeInsets.all(14.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'A reFilc+ 0.99 €, a reFilc+ Gold 2.99 €',
+                          style: TextStyle(
+                            color: isGold
+                                ? const Color(0xFF341C01)
+                                : const Color(0xFF150D4E),
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 24.0,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context, rootNavigator: true)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const PlusScreen();
+                      }));
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                              'assets/images/btn_plus_${isGold ? 'gold' : 'standard'}.png'),
+                        ),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Előfizetés',
+                            style: TextStyle(
+                              color: isGold
+                                  ? const Color(0xFF341C01)
+                                  : const Color(0xFF150D4E),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

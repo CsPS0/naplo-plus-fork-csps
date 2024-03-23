@@ -31,11 +31,11 @@ class WelcomeMessagePanelButton extends StatelessWidget {
       onPressed: () {
         if (!Provider.of<PremiumProvider>(context, listen: false)
             .hasScope(PremiumScopes.welcomeMessage)) {
-          PremiumLockedFeatureUpsell.show(
+          PlusLockedFeaturePopup.show(
               context: context, feature: PremiumFeature.welcomeMessage);
           return;
         }
-        
+
         showDialog(
             context: context,
             builder: (context) => WelcomeMessageEditor(settingsProvider));

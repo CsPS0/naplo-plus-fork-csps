@@ -22,7 +22,7 @@ class PremiumCustomAppIconMenu extends StatelessWidget {
     //   onPressed: () {
     //     if (!Provider.of<PremiumProvider>(context, listen: false)
     //         .hasScope(PremiumScopes.changeAppIcon)) {
-    //       PremiumLockedFeatureUpsell.show(
+    //       PlusLockedFeaturePopup.show(
     //           context: context, feature: PremiumFeature.appiconchange);
     //       return;
     //     }

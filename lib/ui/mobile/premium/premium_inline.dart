@@ -62,7 +62,7 @@ class PremiumInline extends StatelessWidget {
     //         child: InkWell(
     //           borderRadius: BorderRadius.circular(16.0),
     //           onTap: () {
-    //             PremiumLockedFeatureUpsell.show(
+    //             PlusLockedFeaturePopup.show(
     //                 context: context, feature: _getFeature());
     //           },
     //         ),

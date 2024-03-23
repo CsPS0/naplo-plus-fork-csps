@@ -32,7 +32,7 @@
 //       onPressed: () {
 //         // if (!Provider.of<PremiumProvider>(context, listen: false)
 //         //     .hasScope(PremiumScopes.renameTeachers)) {
-//         //   PremiumLockedFeatureUpsell.show(
+//         //   PlusLockedFeaturePopup.show(
 //         //       context: context, feature: PremiumFeature.teacherrename);
 //         //   return;
 //         // }
@@ -57,7 +57,7 @@
 //         onChanged: (v) async {
 //           // if (!Provider.of<PremiumProvider>(context, listen: false)
 //           //     .hasScope(PremiumScopes.renameTeachers)) {
-//           //   PremiumLockedFeatureUpsell.show(
+//           //   PlusLockedFeaturePopup.show(
 //           //       context: context, feature: PremiumFeature.teacherrename);
 //           //   return;
 //           // }
