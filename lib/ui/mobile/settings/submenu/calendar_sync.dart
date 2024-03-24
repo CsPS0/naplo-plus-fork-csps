@@ -151,13 +151,14 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                               width: 64,
                               child: const Icon(
                                 Icons.calendar_month,
+                                color: Colors.black,
                                 size: 38.0,
                               ),
                             ),
                             const SizedBox(width: 10),
                             Icon(
                               Icons.sync_alt_outlined,
-                              color: AppColors.of(context).text.withOpacity(
+                              color: Colors.black.withOpacity(
                                   thirdPartyProvider.linkedAccounts.isEmpty
                                       ? 0.2
                                       : 0.5),
