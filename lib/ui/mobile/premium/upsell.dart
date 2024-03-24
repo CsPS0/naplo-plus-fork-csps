@@ -1,5 +1,4 @@
 import 'package:flutter_svg/svg.dart';
-import 'package:refilc/icons/filc_icons.dart';
 import 'package:refilc_mobile_ui/common/bottom_sheet_menu/rounded_bottom_sheet.dart';
 import 'package:refilc_mobile_ui/premium/plus_screen.dart';
 import 'package:flutter/material.dart';
@@ -295,18 +294,18 @@ class PlusLockedFeaturePopup extends StatelessWidget {
 
   PremiumFeatureLevel? _getFeatureLevel() => _featureLevels[feature];
 
-  IconData _getIcon() => _featureLevels[feature] == PremiumFeatureLevel.cap
-      ? FilcIcons.kupak
-      : _featureLevels[feature] == PremiumFeatureLevel.ink
-          ? FilcIcons.tinta
-          : FilcIcons.tinta;
-  Color _getColor(BuildContext context) =>
-      _featureLevels[feature] == PremiumFeatureLevel.gold
-          ? const Color(0xFFC89B08)
-          : Theme.of(context).brightness == Brightness.light
-              ? const Color(0xff691A9B)
-              : const Color(0xffA66FC8);
-  String? _getAsset() => _featureAssets[feature];
+  // IconData _getIcon() => _featureLevels[feature] == PremiumFeatureLevel.cap
+  //     ? FilcIcons.kupak
+  //     : _featureLevels[feature] == PremiumFeatureLevel.ink
+  //         ? FilcIcons.tinta
+  //         : FilcIcons.tinta;
+  // Color _getColor(BuildContext context) =>
+  //     _featureLevels[feature] == PremiumFeatureLevel.gold
+  //         ? const Color(0xFFC89B08)
+  //         : Theme.of(context).brightness == Brightness.light
+  //             ? const Color(0xff691A9B)
+  //             : const Color(0xffA66FC8);
+  // String? _getAsset() => _featureAssets[feature];
   String _getTitle() => _featureTitles[feature]!;
   String _getDescription() => _featureDescriptions[feature]!;
 
