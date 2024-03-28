@@ -37,6 +37,7 @@ dependencies:
   i18n_extension: ^11.0.12
   http: ^1.2.0
   fl_chart: ^0.45.1
+  flutter_dynamic_icon_plus: ^1.1.2
 
 dev_dependencies:
   flutter_lints: ^3.0.1
