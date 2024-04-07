@@ -314,7 +314,6 @@ class PlusLockedFeaturePopup extends StatelessWidget {
     final bool isGold = _getFeatureLevel() == PremiumFeatureLevel.gold;
 
     return Container(
-      height: 2000,
       decoration: BoxDecoration(
         color: isGold ? const Color(0xFFF7EDD9) : const Color(0xFFDCDAF7),
         borderRadius: const BorderRadius.vertical(
