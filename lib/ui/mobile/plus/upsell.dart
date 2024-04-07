@@ -457,7 +457,7 @@ class PlusLockedFeaturePopup extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'Előfizetés',
+                            'subscribe'.i18n,
                             style: TextStyle(
                               color: isGold
                                   ? const Color(0xFF341C01)

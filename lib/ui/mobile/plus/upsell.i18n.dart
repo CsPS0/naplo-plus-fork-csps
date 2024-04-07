@@ -35,6 +35,8 @@ extension Localization on String {
               "Support us on Gold tier and use all the features of goal setting!",
           "u_desc_11": "With reFilc+ lowest tier it's also available!",
           "u_desc_12": "Sync your time-table with reFilc+ Gold!",
+          // button
+          "subscribe": "Subscribe",
         },
         "hu_hu": {
           // upsell titles
@@ -67,6 +69,8 @@ extension Localization on String {
               "Támogass Gold szinten és használd ki a cél kitűzés minden funkcióját!",
           "u_desc_11": "A reFilc+ alap szintjével ez is elérhető!",
           "u_desc_12": "Szinkronizáld az órarended reFilc+ Gold-al!",
+          // button
+          "subscribe": "Előfizetés",
         },
         "de_de": {
           // upsell titles
@@ -99,6 +103,8 @@ extension Localization on String {
               "Támogass Gold szinten és használd ki a cél kitűzés minden funkcióját!",
           "u_desc_11": "A reFilc+ alap szintjével ez is elérhető!",
           "u_desc_12": "Szinkronizáld az órarended reFilc+ Gold-al!",
+          // button
+          "subscribe": "Abonnieren",
         },
       };
 
