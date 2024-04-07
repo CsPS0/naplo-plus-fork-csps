@@ -2,6 +2,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:refilc_mobile_ui/common/bottom_sheet_menu/rounded_bottom_sheet.dart';
 import 'package:refilc_mobile_ui/premium/plus_screen.dart';
 import 'package:flutter/material.dart';
+import 'upsell.i18n.dart';
 
 enum PremiumFeature {
   // old things
@@ -61,34 +62,34 @@ const Map<PremiumFeature, PremiumFeatureLevel> _featureLevels = {
   PremiumFeature.calendarSync: PremiumFeatureLevel.gold,
 };
 
-const Map<PremiumFeature, String> _featureAssets = {
-  // old
-  PremiumFeature.gradestats: "assets/images/premium_stats_showcase.png",
-  PremiumFeature.customcolors: "assets/images/premium_theme_showcase.png",
-  PremiumFeature.profile: "assets/images/premium_nickname_showcase.png",
-  PremiumFeature.weeklytimetable:
-      "assets/images/premium_timetable_showcase.png",
-  // PremiumFeature.goalplanner: "assets/images/premium_goal_showcase.png",
-  PremiumFeature.widget: "assets/images/premium_widget_showcase.png",
-  // new
-  PremiumFeature.moreAccounts: "assets/images/premium_banner/more_accounts.png",
-  PremiumFeature.betaReleases: "assets/images/premium_banner/beta_releases.png",
-  PremiumFeature.welcomeMessage:
-      "assets/images/premium_banner/welcome_message.png",
-  PremiumFeature.selfNotes: "assets/images/premium_banner/self_notes.png",
-  PremiumFeature.gradeCalculation:
-      "assets/images/premium_banner/grade_calc.png",
-  PremiumFeature.liveActivity: "assets/images/premium_banner/live_activity.png",
-  PremiumFeature.timetableNotes:
-      "assets/images/premium_banner/timetable_notes.png",
-  PremiumFeature.iconChange: "assets/images/premium_banner/app_icon.png",
-  PremiumFeature.fontChange: "assets/images/premium_banner/font.png",
-  PremiumFeature.goalPlanner: "assets/images/premium_banner/goal_planner.png",
+// const Map<PremiumFeature, String> _featureAssets = {
+//   // old
+//   PremiumFeature.gradestats: "assets/images/premium_stats_showcase.png",
+//   PremiumFeature.customcolors: "assets/images/premium_theme_showcase.png",
+//   PremiumFeature.profile: "assets/images/premium_nickname_showcase.png",
+//   PremiumFeature.weeklytimetable:
+//       "assets/images/premium_timetable_showcase.png",
+//   // PremiumFeature.goalplanner: "assets/images/premium_goal_showcase.png",
+//   PremiumFeature.widget: "assets/images/premium_widget_showcase.png",
+//   // new
+//   PremiumFeature.moreAccounts: "assets/images/premium_banner/more_accounts.png",
+//   PremiumFeature.betaReleases: "assets/images/premium_banner/beta_releases.png",
+//   PremiumFeature.welcomeMessage:
+//       "assets/images/premium_banner/welcome_message.png",
+//   PremiumFeature.selfNotes: "assets/images/premium_banner/self_notes.png",
+//   PremiumFeature.gradeCalculation:
+//       "assets/images/premium_banner/grade_calc.png",
+//   PremiumFeature.liveActivity: "assets/images/premium_banner/live_activity.png",
+//   PremiumFeature.timetableNotes:
+//       "assets/images/premium_banner/timetable_notes.png",
+//   PremiumFeature.iconChange: "assets/images/premium_banner/app_icon.png",
+//   PremiumFeature.fontChange: "assets/images/premium_banner/font.png",
+//   PremiumFeature.goalPlanner: "assets/images/premium_banner/goal_planner.png",
 
-  PremiumFeature.gradeRarities:
-      "assets/images/premium_banner/grade_rarities.png",
-  PremiumFeature.calendarSync: "assets/images/premium_banner/calendar_sync.png",
-};
+//   PremiumFeature.gradeRarities:
+//       "assets/images/premium_banner/grade_rarities.png",
+//   PremiumFeature.calendarSync: "assets/images/premium_banner/calendar_sync.png",
+// };
 
 const Map<PremiumFeature, String> _featureTitles = {
   // old shit
@@ -102,19 +103,18 @@ const Map<PremiumFeature, String> _featureTitles = {
   // PremiumFeature.goalplanner: "Kövesd a céljaidat, sok-sok statisztikával.",
   PremiumFeature.widget: "Órák a kezdőképernyőd kényelméből.",
   // new shit
-  PremiumFeature.moreAccounts: "Több fiókot használnál?",
-  PremiumFeature.betaReleases: "Előre kipróbálnád a frissítéseket?",
-  PremiumFeature.welcomeMessage: "\"Szia cica, van gazdád?\"",
-  PremiumFeature.selfNotes: "Felírnád a feladataid?",
-  PremiumFeature.gradeCalculation: "Lusta vagy matekozni?",
-  PremiumFeature.liveActivity: "Tudom, nem túl szép a sima szürke :P",
-  PremiumFeature.timetableNotes:
-      "\"Mit is csináltunk órán? Volt angol házi??\"",
-  PremiumFeature.iconChange: "Ez aztán különleges!",
-  PremiumFeature.fontChange: "Woah! Micsoda gyönyörű betűk!",
-  PremiumFeature.goalPlanner: "Még több javaslat kell?",
-  PremiumFeature.gradeRarities: "Nem epikus, hanem ultraszuper?",
-  PremiumFeature.calendarSync: "Még a naptáradba is kell?!",
+  PremiumFeature.moreAccounts: "u_title_1",
+  PremiumFeature.betaReleases: "u_title_2",
+  PremiumFeature.welcomeMessage: "u_title_3",
+  PremiumFeature.selfNotes: "u_title_4",
+  PremiumFeature.gradeCalculation: "u_title_5",
+  PremiumFeature.liveActivity: "u_title_6",
+  PremiumFeature.timetableNotes: "u_title_7",
+  PremiumFeature.iconChange: "u_title_8",
+  PremiumFeature.fontChange: "u_title_9",
+  PremiumFeature.goalPlanner: "u_title_10",
+  PremiumFeature.gradeRarities: "u_title_11",
+  PremiumFeature.calendarSync: "u_title_12",
 };
 
 const Map<PremiumFeature, String> _featureDescriptions = {
@@ -135,28 +135,18 @@ const Map<PremiumFeature, String> _featureDescriptions = {
   PremiumFeature.widget:
       "Támogass Tinta szinten, és helyezz egy widgetet a kezdőképernyődre.",
   // new
-  PremiumFeature.moreAccounts:
-      "Minden támogatási szinttel egyre magasabb a limit.",
-  PremiumFeature.betaReleases:
-      "Fizess elő reFilc+-ra, hogy előre megkapd a béta frissítéseket.",
-  PremiumFeature.welcomeMessage:
-      "Az egyedi üdvözléshez elég csupán a legalsó szint!",
-  PremiumFeature.selfNotes:
-      "Támogass minket, és jegyezd fel minden fontos dolgod.",
-  PremiumFeature.gradeCalculation:
-      "reFilc+-al egyszerűbb kiszámolnod a tervezett átlagod.",
-  PremiumFeature.liveActivity:
-      "Gold szintű támogatással átszínezhetsz bármilyenre.",
-  PremiumFeature.timetableNotes:
-      "Nincs több ilyen kérdés, ha Gold szinten támogatsz.",
-  PremiumFeature.iconChange:
-      "Fizess elő Gold szintre az alkalmazás ikonjának megváltoztatásához.",
-  PremiumFeature.fontChange:
-      "Gold szintű támogatással megváltoztathatod a betűtípust is.",
-  PremiumFeature.goalPlanner:
-      "Támogass Gold szinten és használd ki a cél kitűzés minden funkcióját!",
-  PremiumFeature.gradeRarities: "A reFilc+ alap szintjével ez is elérhető!",
-  PremiumFeature.calendarSync: "Szinkronizáld az órarended reFilc+ Gold-al!",
+  PremiumFeature.moreAccounts: "u_desc_1",
+  PremiumFeature.betaReleases: "u_desc_2",
+  PremiumFeature.welcomeMessage: "u_desc_3",
+  PremiumFeature.selfNotes: "u_desc_4",
+  PremiumFeature.gradeCalculation: "u_desc_5",
+  PremiumFeature.liveActivity: "u_desc_6",
+  PremiumFeature.timetableNotes: "u_desc_7",
+  PremiumFeature.iconChange: "u_desc_8",
+  PremiumFeature.fontChange: "u_desc_9",
+  PremiumFeature.goalPlanner: "u_desc_10",
+  PremiumFeature.gradeRarities: "u_desc_11",
+  PremiumFeature.calendarSync: "u_desc_12",
 };
 
 // class PremiumLockedFeatureUpsell extends StatelessWidget {
@@ -306,8 +296,8 @@ class PlusLockedFeaturePopup extends StatelessWidget {
   //             ? const Color(0xff691A9B)
   //             : const Color(0xffA66FC8);
   // String? _getAsset() => _featureAssets[feature];
-  String _getTitle() => _featureTitles[feature]!;
-  String _getDescription() => _featureDescriptions[feature]!;
+  String _getTitle() => _featureTitles[feature]!.i18n;
+  String _getDescription() => _featureDescriptions[feature]!.i18n;
 
   @override
   Widget build(BuildContext context) {
