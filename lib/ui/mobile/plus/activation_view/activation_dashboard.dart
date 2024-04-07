@@ -1,5 +1,5 @@
 import 'package:refilc/theme/colors/colors.dart';
-import 'package:refilc_plus/providers/premium_provider.dart';
+import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter/services.dart';
@@ -25,7 +25,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
     });
     final result =
         // ignore: use_build_context_synchronously
-        await context.read<PremiumProvider>().auth.finishAuth(data.text!);
+        await context.read<PlusProvider>().auth.finishAuth(data.text!);
     setState(() {
       manualActivationLoading = false;
     });

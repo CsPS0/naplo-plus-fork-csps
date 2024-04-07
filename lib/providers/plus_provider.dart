@@ -3,7 +3,7 @@ import 'package:refilc_plus/api/auth.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:flutter/widgets.dart';
 
-class PremiumProvider extends ChangeNotifier {
+class PlusProvider extends ChangeNotifier {
   final SettingsProvider _settings;
   List<String> get scopes => _settings.premiumScopes;
   // bool hasScope(String scope) => false;
@@ -17,7 +17,7 @@ class PremiumProvider extends ChangeNotifier {
   late final PremiumAuth _auth;
   PremiumAuth get auth => _auth;
 
-  PremiumProvider({required SettingsProvider settings}) : _settings = settings {
+  PlusProvider({required SettingsProvider settings}) : _settings = settings {
     _auth = PremiumAuth(settings: _settings);
     _settings.addListener(() {
       notifyListeners();

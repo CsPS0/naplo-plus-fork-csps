@@ -4,7 +4,7 @@ import 'package:refilc_mobile_ui/common/panel/panel.dart';
 // import 'package:refilc_mobile_ui/common/panel/panel_button.dart';
 import 'package:refilc_plus/helpers/app_icon_helper.dart';
 // import 'package:refilc_plus/models/premium_scopes.dart';
-// import 'package:refilc_plus/providers/premium_provider.dart';
+// import 'package:refilc_plus/providers/plus_provider.dart';
 // import 'package:refilc_plus/ui/mobile/plus/upsell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -20,7 +20,7 @@ class PremiumCustomAppIconMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     // return PanelButton(
     //   onPressed: () {
-    //     if (!Provider.of<PremiumProvider>(context, listen: false)
+    //     if (!Provider.of<PlusProvider>(context, listen: false)
     //         .hasScope(PremiumScopes.changeAppIcon)) {
     //       PlusLockedFeaturePopup.show(
     //           context: context, feature: PremiumFeature.appiconchange);

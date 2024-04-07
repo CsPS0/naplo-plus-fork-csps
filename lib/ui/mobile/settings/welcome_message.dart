@@ -3,7 +3,7 @@ import 'package:refilc/models/settings.dart';
 import 'package:refilc/theme/colors/colors.dart';
 import 'package:refilc_mobile_ui/common/panel/panel_button.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
-import 'package:refilc_plus/providers/premium_provider.dart';
+import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:refilc_plus/ui/mobile/plus/upsell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -29,7 +29,7 @@ class WelcomeMessagePanelButton extends StatelessWidget {
 
     return PanelButton(
       onPressed: () {
-        if (!Provider.of<PremiumProvider>(context, listen: false)
+        if (!Provider.of<PlusProvider>(context, listen: false)
             .hasScope(PremiumScopes.welcomeMessage)) {
           PlusLockedFeaturePopup.show(
               context: context, feature: PremiumFeature.welcomeMessage);

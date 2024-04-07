@@ -1,5 +1,5 @@
 import 'package:animations/animations.dart';
-import 'package:refilc_plus/providers/premium_provider.dart';
+import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:refilc_plus/ui/mobile/plus/activation_view/activation_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -22,7 +22,7 @@ class _PremiumActivationViewState extends State<PremiumActivationView>
   @override
   void initState() {
     super.initState();
-    context.read<PremiumProvider>().auth.initAuth(product: widget.product);
+    context.read<PlusProvider>().auth.initAuth(product: widget.product);
 
     animation =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
@@ -36,7 +36,7 @@ class _PremiumActivationViewState extends State<PremiumActivationView>
 
   @override
   Widget build(BuildContext context) {
-    final premium = context.watch<PremiumProvider>();
+    final premium = context.watch<PlusProvider>();
 
     if (premium.hasPremium && !activated) {
       activated = true;

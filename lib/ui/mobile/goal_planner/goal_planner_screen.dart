@@ -11,7 +11,7 @@ import 'package:refilc_mobile_ui/common/average_display.dart';
 import 'package:refilc_mobile_ui/common/round_border_icon.dart';
 import 'package:refilc_mobile_ui/pages/grades/calculator/grade_calculator_provider.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
-import 'package:refilc_plus/providers/premium_provider.dart';
+import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_input.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner_screen.i18n.dart';
@@ -139,7 +139,7 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
     otherPlans = List.from(plans);
 
     // only save 2 items if not plus member
-    if (!Provider.of<PremiumProvider>(context)
+    if (!Provider.of<PlusProvider>(context)
         .hasScope(PremiumScopes.unlimitedGoalPlanner)) {
       if (otherPlans.length > 2) {
         otherPlans.removeRange(2, otherPlans.length - 1);
