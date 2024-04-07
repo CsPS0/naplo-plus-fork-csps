@@ -74,35 +74,40 @@ extension Localization on String {
         },
         "de_de": {
           // upsell titles
-          "u_title_1": "Több fiókot használnál?",
-          "u_title_2": "Előre kipróbálnád a frissítéseket?",
-          "u_title_3": "\"Szia cica, van gazdád?\"",
-          "u_title_4": "Felírnád a feladataid?",
-          "u_title_5": "Lusta vagy matekozni?",
-          "u_title_6": "Tudom, nem túl szép a sima szürke :P",
-          "u_title_7": "\"Mit is csináltunk órán? Volt angol házi??\"",
-          "u_title_8": "Ez aztán különleges!",
-          "u_title_9": "Woah! Micsoda gyönyörű betűk!",
-          "u_title_10": "Még több javaslat kell?",
-          "u_title_11": "Nem epikus, hanem ultraszuper?",
-          "u_title_12": "Még a naptáradba is kell?!",
+          "u_title_1": "Mehr Accounts nutzen?",
+          "u_title_2": "Willst du die Updates im vorraus testen?",
+          "u_title_3": "\"Hallo mein Kätzchen, hast du einen besitzer?\"",
+          "u_title_4": "Würdest du deine Aufgaben aufschreiben?",
+          "u_title_5": "Faul um Mathe zu machen?",
+          "u_title_6": "Ich weiß, das schlichte Grau ist nicht so toll :P",
+          "u_title_7":
+              "\"Was haben wir im Unterricht gemacht? Gab es Englisch Hausaufgaben??\"",
+          "u_title_8": "Na das ist mal was besonderes!",
+          "u_title_9": "Wow! Was für schöne Texte!",
+          "u_title_10": "Brauchst du mehr Vorschläge?",
+          "u_title_11":
+              "Willst du vielleicht statt episch etwas anderes wie super?",
+          "u_title_12": "Brauchst du das wirklich in deinem Kalender?!",
           // upsell descriptions
-          "u_desc_1": "Minden támogatási szinttel egyre magasabb a limit.",
+          "u_desc_1": "Das limit erhöht sich mit jedem Abo-plan.",
           "u_desc_2":
-              "Fizess elő reFilc+-ra, hogy előre megkapd a béta frissítéseket.",
-          "u_desc_3": "Az egyedi üdvözléshez elég csupán a legalsó szint!",
-          "u_desc_4": "Támogass minket, és jegyezd fel minden fontos dolgod.",
-          "u_desc_5": "reFilc+-al egyszerűbb kiszámolnod a tervezett átlagod.",
-          "u_desc_6": "Gold szintű támogatással átszínezhetsz bármilyenre.",
-          "u_desc_7": "Nincs több ilyen kérdés, ha Gold szinten támogatsz.",
-          "u_desc_8":
-              "Fizess elő Gold szintre az alkalmazás ikonjának megváltoztatásához.",
+              "Abonniere reFilc+ um Beta Updates im vorraus zu erhalten.",
+          "u_desc_3":
+              "Für eine eigene Begrüßung ist der niedrigste Abo-Plan schon genug!",
+          "u_desc_4":
+              "Unterstütze uns und schreib alles wichtige für dich auf.",
+          "u_desc_5":
+              "reFilc+ macht es einfacher deinen Durchschnitt zu berechnen.",
+          "u_desc_6": "Mit dem Gold-Plan, kannst du alles anders Färben.",
+          "u_desc_7": "Keine weiteren Fragen mit Gold.",
+          "u_desc_8": "Upgrade auf Gold um das App Icon zu ändern.",
           "u_desc_9":
-              "Gold szintű támogatással megváltoztathatod a betűtípust is.",
+              "Du kannst mit dem Gold-Plan auch die Schriftart verändern.",
           "u_desc_10":
-              "Támogass Gold szinten és használd ki a cél kitűzés minden funkcióját!",
-          "u_desc_11": "A reFilc+ alap szintjével ez is elérhető!",
-          "u_desc_12": "Szinkronizáld az órarended reFilc+ Gold-al!",
+              "Unterstütze uns mit einem Gold-Plan und benutze alle features des Ziel-setzens!",
+          "u_desc_11":
+              "Mit reFilc+ niedrigstem Abo-Plan ist es auch Verfügbar!",
+          "u_desc_12": "Synchronisiere deinen Stundenplan mit reFilc+ Gold!",
           // button
           "subscribe": "Abonnieren",
         },
