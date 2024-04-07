@@ -19,21 +19,21 @@ extension Localization on String {
           "u_title_11": "Not epic, but ultra-super?",
           "u_title_12": "Do you even need it in your calendar?!",
           // upsell descriptions
-          "u_desc_1": "The limit increases with each level.",
+          "u_desc_1": "The limit increases with each tier.",
           "u_desc_2":
               "Subscribe to reFilc+ to receive beta updates in advance.",
-          "u_desc_3": "For a unique greeting, just the lowest level is enough!",
+          "u_desc_3": "For a unique greeting, just the lowest tier is enough!",
           "u_desc_4":
               "Support us and make a note of all your important things.",
           "u_desc_5":
               "reFilc+ makes it easier to calculate your projected average.",
-          "u_desc_6": "With Gold level, you can recolour to anything.",
+          "u_desc_6": "With Gold tier, you can recolour to anything.",
           "u_desc_7": "No more questions in Gold.",
           "u_desc_8": "Upgrade to Gold to change the app icon.",
-          "u_desc_9": "You can also change the font with Gold level.",
+          "u_desc_9": "You can also change the font with Gold tier.",
           "u_desc_10":
-              "Support us on Gold level and use all the features of goal setting!",
-          "u_desc_11": "With reFilc+ lowest level it's also available!",
+              "Support us on Gold tier and use all the features of goal setting!",
+          "u_desc_11": "With reFilc+ lowest tier it's also available!",
           "u_desc_12": "Sync your time-table with reFilc+ Gold!",
         },
         "hu_hu": {
