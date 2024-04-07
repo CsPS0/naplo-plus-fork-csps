@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:refilc_mobile_ui/premium/plus_screen.dart';
+import 'package:refilc_mobile_ui/plus/plus_screen.dart';
 
 class PlusSettingsInline extends StatelessWidget {
   const PlusSettingsInline({super.key});

@@ -1,6 +1,6 @@
 // ignore_for_file: unused_element
 
-import 'package:refilc_plus/ui/mobile/premium/upsell.dart';
+import 'package:refilc_plus/ui/mobile/plus/upsell.dart';
 import 'package:flutter/material.dart';
 
 enum PremiumInlineFeature { nickname, theme, widget, goal, stats }

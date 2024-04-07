@@ -17,7 +17,7 @@ import 'package:refilc_mobile_ui/common/widgets/custom_segmented_control.dart';
 import 'package:refilc_mobile_ui/screens/settings/settings_screen.i18n.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:refilc_plus/providers/premium_provider.dart';
-import 'package:refilc_plus/ui/mobile/premium/upsell.dart';
+import 'package:refilc_plus/ui/mobile/plus/upsell.dart';
 
 class MenuCalendarSync extends StatelessWidget {
   const MenuCalendarSync({
