@@ -62,7 +62,8 @@ class PremiumAuth {
       );
 
       launchUrl(
-        Uri.parse("${FilcAPI.payment}/stripe-create-checkout?product=$product"),
+        Uri.parse(
+            "${FilcAPI.payment}/stripe-create-checkout?product=$product&rf_uinid=${_settings.xFilcId}"),
         mode: LaunchMode.externalApplication,
       );
     } catch (err, sta) {
@@ -145,6 +146,7 @@ class PremiumAuth {
 
           final res = await http.post(Uri.parse(FilcAPI.plusActivation), body: {
             "session_id": _settings.plusSessionId,
+            "rf_uinid": _settings.xFilcId,
           });
 
           if (kDebugMode) print(res.body);
@@ -161,6 +163,9 @@ class PremiumAuth {
           }
           if (res.body == "no_subscription") {
             throw "This user isn't a subscriber!";
+          }
+          if (res.body == "unknown_device") {
+            throw "This device is not recognized, please contact support!";
           }
 
           final premium = PremiumResult.fromJson(jsonDecode(res.body) as Map);

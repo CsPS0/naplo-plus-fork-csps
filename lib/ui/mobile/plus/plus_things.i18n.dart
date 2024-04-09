@@ -37,6 +37,10 @@ extension Localization on String {
           "u_desc_12": "Sync your time-table with reFilc+ Gold!",
           // button
           "subscribe": "Subscribe",
+          "subscriber": "Subscribed",
+          // other
+          "copy_code_asap":
+              "Copy your reFilc+ ID, in case you loose your device!",
         },
         "hu_hu": {
           // upsell titles
@@ -71,6 +75,10 @@ extension Localization on String {
           "u_desc_12": "Szinkronizáld az órarended reFilc+ Gold-al!",
           // button
           "subscribe": "Előfizetés",
+          "subscriber": "Előfizetve",
+          // other
+          "copy_code_asap":
+              "Másold ki a reFilc+ ID-t, mielőtt elveszítenéd a telefonod!",
         },
         "de_de": {
           // upsell titles
@@ -110,6 +118,10 @@ extension Localization on String {
           "u_desc_12": "Synchronisiere deinen Stundenplan mit reFilc+ Gold!",
           // button
           "subscribe": "Abonnieren",
+          "subscriber": "im Abonnement",
+          // other
+          "copy_code_asap":
+              "Kopieren Sie Ihre reFilc+ ID, bevor Sie Ihr Handy verlieren!",
         },
       };
 

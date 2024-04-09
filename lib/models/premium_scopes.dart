@@ -15,7 +15,7 @@ class PremiumScopes {
   static const unlimitedSelfNotes = "refilc.plus.UNLIMITED_SELF_NOTES";
   static const customGradeRarities = "refilc.plus.CUSTOM_GRADE_RARITIES";
   // tier scope
-  static const tierCap = "refilc.plus.tier.CAP";
+  // static const tierCap = "refilc.plus.tier.CAP";
 
   // tier 2 (Tinta) (reFilc+ Gold)
   static const noAccountLimit = "refilc.plus.NO_ACCOUNT_LIMIT";
@@ -26,7 +26,7 @@ class PremiumScopes {
   static const unlimitedGoalPlanner = "refilc.plus.UNLIMITED_GOAL_PLANNER";
   static const calendarSync = "refilc.plus.CALENDAR_SYNC";
   // tier scope
-  static const tierInk = "refilc.plus.tier.INK";
+  // static const tierInk = "refilc.plus.tier.INK";
 
   // tier 3 (Szivacs)
   // cancelled
@@ -43,4 +43,8 @@ class PremiumScopes {
   static const renameSubjects = "refilc.plus.RENAME_SUBJECTS";
   static const timetableWidget = "refilc.plus.TIMETALBE_WIDGET";
   static const fsTimetable = "refilc.plus.FS_TIMETABLE";
+
+  // new new tier scopes
+  static const tierBasic = "refilc.plus.tier.BASIC";
+  static const tierGold = "refilc.plus.tier.GOLD";
 }
