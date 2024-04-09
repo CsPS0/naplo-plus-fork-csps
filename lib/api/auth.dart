@@ -122,9 +122,10 @@ class PremiumAuth {
   //   return false;
   // }
 
-  Future<bool> refreshAuth({bool removePremium = false}) async {
+  Future<bool> refreshAuth(
+      {bool removePremium = false, bool reactivate = false}) async {
     if (!removePremium) {
-      if (_settings.plusSessionId == "") {
+      if (_settings.plusSessionId == "" && !reactivate) {
         await _settings.update(premiumScopes: [], premiumLogin: "");
         return false;
       }
