@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:io';
+
 import 'package:refilc/api/providers/user_provider.dart';
 import 'package:refilc/models/linked_account.dart';
 import 'package:refilc/models/settings.dart';
@@ -196,77 +198,79 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                   if (thirdPartyProvider.linkedAccounts.isEmpty)
                     Column(
                       children: [
-                        SplittedPanel(
-                          title: Text('choose_account'.i18n),
-                          padding: EdgeInsets.zero,
-                          cardPadding: const EdgeInsets.all(4.0),
-                          isSeparated: true,
-                          children: [
-                            PanelButton(
-                              onPressed: () async {
-                                await Provider.of<ThirdPartyProvider>(context,
-                                        listen: false)
-                                    .googleSignIn();
+                        if (Platform.isAndroid)
+                          SplittedPanel(
+                            title: Text('choose_account'.i18n),
+                            padding: EdgeInsets.zero,
+                            cardPadding: const EdgeInsets.all(4.0),
+                            isSeparated: true,
+                            children: [
+                              PanelButton(
+                                onPressed: () async {
+                                  await Provider.of<ThirdPartyProvider>(context,
+                                          listen: false)
+                                      .googleSignIn();
 
-                                setState(() {});
-                              },
-                              title: Text(
-                                'Google',
-                                style: TextStyle(
-                                  color: AppColors.of(context)
-                                      .text
-                                      .withOpacity(.95),
+                                  setState(() {});
+                                },
+                                title: Text(
+                                  'Google',
+                                  style: TextStyle(
+                                    color: AppColors.of(context)
+                                        .text
+                                        .withOpacity(.95),
+                                  ),
+                                ),
+                                leading: Image.asset(
+                                  'assets/images/ext_logo/google.png',
+                                  width: 24.0,
+                                  height: 24.0,
+                                ),
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(12),
+                                  bottom: Radius.circular(12),
                                 ),
                               ),
-                              leading: Image.asset(
-                                'assets/images/ext_logo/google.png',
-                                width: 24.0,
-                                height: 24.0,
-                              ),
-                              borderRadius: const BorderRadius.vertical(
-                                top: Radius.circular(12),
-                                bottom: Radius.circular(12),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 9.0,
-                        ),
-                        SplittedPanel(
-                          padding: EdgeInsets.zero,
-                          cardPadding: const EdgeInsets.all(4.0),
-                          isSeparated: true,
-                          children: [
-                            PanelButton(
-                              onPressed: null,
-                              title: Text(
-                                'Apple',
-                                style: TextStyle(
-                                  color: AppColors.of(context)
-                                      .text
-                                      .withOpacity(.55),
-                                  decoration: TextDecoration.lineThrough,
+                            ],
+                          ),
+                        // const SizedBox(
+                        //   height: 9.0,
+                        // ),
+                        if (Platform.isIOS)
+                          SplittedPanel(
+                            padding: EdgeInsets.zero,
+                            cardPadding: const EdgeInsets.all(4.0),
+                            isSeparated: true,
+                            children: [
+                              PanelButton(
+                                onPressed: null,
+                                title: Text(
+                                  'Apple',
+                                  style: TextStyle(
+                                    color: AppColors.of(context)
+                                        .text
+                                        .withOpacity(.55),
+                                    decoration: TextDecoration.lineThrough,
+                                  ),
+                                ),
+                                leading: Image.asset(
+                                  'assets/images/ext_logo/apple.png',
+                                  width: 24.0,
+                                  height: 24.0,
+                                ),
+                                trailing: Text(
+                                  'soon'.i18n,
+                                  style: const TextStyle(
+                                      fontStyle: FontStyle.italic,
+                                      fontSize: 14.0),
+                                ),
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(12),
+                                  bottom: Radius.circular(12),
                                 ),
                               ),
-                              leading: Image.asset(
-                                'assets/images/ext_logo/apple.png',
-                                width: 24.0,
-                                height: 24.0,
-                              ),
-                              trailing: Text(
-                                'soon'.i18n,
-                                style: const TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                    fontSize: 14.0),
-                              ),
-                              borderRadius: const BorderRadius.vertical(
-                                top: Radius.circular(12),
-                                bottom: Radius.circular(12),
-                              ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
                       ],
                     ),
 
