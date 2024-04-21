@@ -34,52 +34,52 @@ class MenuCalendarSync extends StatelessWidget {
   Widget build(BuildContext context) {
     return PanelButton(
       onPressed: () async {
-        if (!Provider.of<PlusProvider>(context, listen: false)
-            .hasScope(PremiumScopes.calendarSync)) {
-          return PlusLockedFeaturePopup.show(
-              context: context, feature: PremiumFeature.calendarSync);
-        }
+        // if (!Provider.of<PlusProvider>(context, listen: false)
+        //     .hasScope(PremiumScopes.calendarSync)) {
+        //   return PlusLockedFeaturePopup.show(
+        //       context: context, feature: PremiumFeature.calendarSync);
+        // }
 
-        Navigator.of(context, rootNavigator: true).push(CupertinoPageRoute(
-            builder: (context) => const CalendarSyncScreen()));
-        // showDialog(
-        //   context: context,
-        //   builder: (context) => AlertDialog(
-        //     title: const Text("Figyelem!"),
-        //     content: const Text(
-        //         "A naptár szinkronizálás csak azután fog működni, hogy a Google elfogadja az OAuth kérelmünket, addig is szíves türelmeteket kérjük! Amint ez megtörténik, értesíteni fogunk titeket Discord-on, valamint alkalmazáson belüli hírekben is."),
-        //     actions: [
-        //       TextButton(
-        //         child: const Text(
-        //           "Vissza",
-        //           style: TextStyle(fontWeight: FontWeight.w500),
-        //         ),
-        //         onPressed: () {
-        //           Navigator.of(context).pop();
-        //         },
-        //       ),
-        //       TextButton(
-        //         child: const Text(
-        //           "Tovább",
-        //           style: TextStyle(fontWeight: FontWeight.w500),
-        //         ),
-        //         onPressed: () {
-        //           Navigator.of(context).pop();
+        // Navigator.of(context, rootNavigator: true).push(CupertinoPageRoute(
+        //     builder: (context) => const CalendarSyncScreen()));
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text("Figyelem!"),
+            content: const Text(
+                "A naptár szinkronizálás csak azután fog működni, hogy a Google elfogadja az OAuth kérelmünket, addig is szíves türelmeteket kérjük! Amint ez megtörténik, értesíteni fogunk titeket Discord-on, valamint alkalmazáson belüli hírekben is."),
+            actions: [
+              TextButton(
+                child: const Text(
+                  "Vissza",
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: const Text(
+                  "Tovább",
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
 
-        //           if (!Provider.of<PlusProvider>(context, listen: false)
-        //               .hasScope(PremiumScopes.calendarSync)) {
-        //             return PlusLockedFeaturePopup.show(
-        //                 context: context, feature: PremiumFeature.calendarSync);
-        //           }
+                  if (!Provider.of<PlusProvider>(context, listen: false)
+                      .hasScope(PremiumScopes.calendarSync)) {
+                    return PlusLockedFeaturePopup.show(
+                        context: context, feature: PremiumFeature.calendarSync);
+                  }
 
-        //           Navigator.of(context, rootNavigator: true).push(
-        //               CupertinoPageRoute(
-        //                   builder: (context) => const CalendarSyncScreen()));
-        //         },
-        //       ),
-        //     ],
-        //   ),
-        // );
+                  Navigator.of(context, rootNavigator: true).push(
+                      CupertinoPageRoute(
+                          builder: (context) => const CalendarSyncScreen()));
+                },
+              ),
+            ],
+          ),
+        );
       },
       title: Text(
         "calendar_sync".i18n,
