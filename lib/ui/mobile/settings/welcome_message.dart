@@ -29,13 +29,6 @@ class WelcomeMessagePanelButton extends StatelessWidget {
 
     return PanelButton(
       onPressed: () {
-        if (!Provider.of<PlusProvider>(context, listen: false)
-            .hasScope(PremiumScopes.welcomeMessage)) {
-          PlusLockedFeaturePopup.show(
-              context: context, feature: PremiumFeature.welcomeMessage);
-          return;
-        }
-
         showDialog(
             context: context,
             builder: (context) => WelcomeMessageEditor(settingsProvider));
@@ -144,6 +137,14 @@ class _WelcomeMessageEditorState extends State<WelcomeMessageEditor> {
                 .replaceAll('%', '')
                 .replaceFirst('\$s', '%s');
             // .replaceAll('\$s', 's');
+
+            if (!Provider.of<PlusProvider>(context, listen: false)
+                    .hasScope(PremiumScopes.welcomeMessage) &&
+                finalText.replaceAll(' ', '') != '') {
+              PlusLockedFeaturePopup.show(
+                  context: context, feature: PremiumFeature.welcomeMessage);
+              return;
+            }
 
             widget.settingsProvider
                 .update(welcomeMessage: finalText, store: true);
