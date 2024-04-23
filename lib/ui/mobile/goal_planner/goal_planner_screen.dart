@@ -422,7 +422,7 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
                           // ignore: use_build_context_synchronously
                           Navigator.of(context).pop();
                         },
-                        fillColor: Theme.of(context).colorScheme.primary,
+                        fillColor: Theme.of(context).colorScheme.secondary,
                         shape: const StadiumBorder(),
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: Text(
