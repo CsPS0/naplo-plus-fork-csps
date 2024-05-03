@@ -8,7 +8,7 @@ class AppIconHelper {
   static Future<void> setAppIcon(String iconName) async {
     try {
       if (await FlutterDynamicIconPlus.supportsAlternateIcons) {
-        await FlutterDynamicIconPlus.setAlternateIconName("icon_new");
+        await FlutterDynamicIconPlus.setAlternateIconName(iconName: "icon_new");
         if (kDebugMode) {
           print("successfully changed app icon");
         }
