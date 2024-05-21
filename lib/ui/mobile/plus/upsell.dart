@@ -1,4 +1,5 @@
 import 'package:flutter_svg/svg.dart';
+import 'package:refilc/helpers/subject.dart';
 import 'package:refilc_mobile_ui/common/bottom_sheet_menu/rounded_bottom_sheet.dart';
 import 'package:refilc_mobile_ui/plus/plus_screen.dart';
 import 'package:flutter/material.dart';
@@ -313,7 +314,8 @@ class PlusLockedFeaturePopup extends StatelessWidget {
       child: Stack(
         children: [
           SvgPicture.asset(
-            "assets/svg/mesh_bg.svg",
+            // "assets/svg/mesh_bg.svg",
+            "assets/svg/cover_arts/grid.svg",
             // ignore: deprecated_member_use
             color: isGold ? const Color(0xFFf0dcb6) : const Color(0xFFbcb8f0),
             width: MediaQuery.of(context).size.width,
