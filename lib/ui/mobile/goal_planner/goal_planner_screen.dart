@@ -15,6 +15,7 @@ import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_input.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner_screen.i18n.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/goal_track_popup.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/route_option.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -213,6 +214,11 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
                 Row(
                   children: [
                     const BackButton(),
+                    BackButton(
+                      color: Colors.red,
+                      onPressed: () =>
+                          GoalTrackPopup.show(context, subject: widget.subject),
+                    ),
                     RoundBorderIcon(
                       icon: Icon(
                         SubjectIcon.resolveVariant(

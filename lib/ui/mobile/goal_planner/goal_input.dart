@@ -53,7 +53,9 @@ class GoalInput extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: CustomPaint(
                   painter: GoalSliderPainter(
-                      value: (value - 1) / 4, settings: settings),
+                      value: (value - 1) / 4,
+                      settings: settings,
+                      goalValue: value),
                 ),
               ),
             ),
@@ -106,15 +108,17 @@ class GoalInput extends StatelessWidget {
 class GoalSliderPainter extends CustomPainter {
   final double value;
   final SettingsProvider settings;
+  final double goalValue;
 
-  GoalSliderPainter({required this.value, required this.settings});
+  GoalSliderPainter(
+      {required this.value, required this.settings, required this.goalValue});
 
   @override
   void paint(Canvas canvas, Size size) {
     final radius = size.height / 2;
     const cpadding = 4;
     final rect = Rect.fromLTWH(0, 0, size.width + radius, size.height);
-    final vrect = Rect.fromLTWH(0, 0, size.width * value + radius, size.height);
+    // final vrect = Rect.fromLTWH(0, 0, size.width * value + radius, size.height);
     canvas.drawRRect(
       RRect.fromRectAndRadius(
         rect,
@@ -124,7 +128,7 @@ class GoalSliderPainter extends CustomPainter {
     );
     canvas.drawRRect(
       RRect.fromRectAndRadius(
-        vrect,
+        rect,
         const Radius.circular(99.0),
       ),
       Paint()
@@ -136,17 +140,38 @@ class GoalSliderPainter extends CustomPainter {
           settings.gradeColors[4],
         ]).createShader(rect),
     );
+
+    double w = size.width + radius;
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(
+        Rect.fromLTWH(
+            (w - (w * 0.986)) / 2,
+            (size.height - (size.height * 0.85)) / 2,
+            w * 0.986,
+            size.height * 0.85),
+        const Radius.circular(99.0),
+      ),
+      Paint()..color = Colors.white.withOpacity(.8),
+    );
+
     canvas.drawOval(
       Rect.fromCircle(
           center: Offset(size.width * value, size.height / 2),
           radius: radius - cpadding),
       Paint()..color = Colors.white,
     );
+    canvas.drawOval(
+      Rect.fromCircle(
+          center: Offset(size.width * value, size.height / 2),
+          radius: (radius - cpadding) * 0.8),
+      Paint()..color = gradeColor(goalValue.round(), settings),
+    );
+
     for (int i = 1; i < 4; i++) {
       canvas.drawOval(
         Rect.fromCircle(
             center: Offset(size.width / 4 * i, size.height / 2), radius: 4),
-        Paint()..color = Colors.white.withOpacity(.5),
+        Paint()..color = Colors.white.withOpacity(.6),
       );
     }
   }
