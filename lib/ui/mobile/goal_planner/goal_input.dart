@@ -61,45 +61,45 @@ class GoalInput extends StatelessWidget {
             ),
           );
         }),
-        const SizedBox(height: 12.0),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: presets.map((e) {
-            final pv = (value * 10).round() / 10;
-            final selected = gradeToAvg(e) == pv;
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(99.0),
-                  color:
-                      gradeColor(e, settings).withOpacity(selected ? 1.0 : 0.2),
-                  border: Border.all(color: gradeColor(e, settings), width: 4),
-                ),
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(99.0),
-                    onTap: () => setValue(gradeToAvg(e)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 2.0, horizontal: 24.0),
-                      child: Text(
-                        e.toString(),
-                        style: TextStyle(
-                          color:
-                              selected ? Colors.white : gradeColor(e, settings),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            );
-          }).toList(),
-        )
+        // const SizedBox(height: 12.0),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: presets.map((e) {
+        //     final pv = (value * 10).round() / 10;
+        //     final selected = gradeToAvg(e) == pv;
+        //     return Padding(
+        //       padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        //       child: Container(
+        //         decoration: BoxDecoration(
+        //           borderRadius: BorderRadius.circular(99.0),
+        //           color:
+        //               gradeColor(e, settings).withOpacity(selected ? 1.0 : 0.2),
+        //           border: Border.all(color: gradeColor(e, settings), width: 4),
+        //         ),
+        //         child: Material(
+        //           type: MaterialType.transparency,
+        //           child: InkWell(
+        //             borderRadius: BorderRadius.circular(99.0),
+        //             onTap: () => setValue(gradeToAvg(e)),
+        //             child: Padding(
+        //               padding: const EdgeInsets.symmetric(
+        //                   vertical: 2.0, horizontal: 24.0),
+        //               child: Text(
+        //                 e.toString(),
+        //                 style: TextStyle(
+        //                   color:
+        //                       selected ? Colors.white : gradeColor(e, settings),
+        //                   fontWeight: FontWeight.bold,
+        //                   fontSize: 24.0,
+        //                 ),
+        //               ),
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     );
+        //   }).toList(),
+        // )
       ],
     );
   }

@@ -19,8 +19,9 @@ class RouteOption extends StatelessWidget {
   final bool selected;
   final void Function() onSelected;
 
-  Widget markLabel() {
-    const style = TextStyle(fontWeight: FontWeight.bold);
+  Widget markLabel({Color? colorOverride}) {
+    TextStyle style =
+        TextStyle(fontWeight: FontWeight.bold, color: colorOverride);
 
     switch (mark!) {
       case RouteMark.recommended:
@@ -95,7 +96,7 @@ class RouteOption extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
             side: selected
-                ? BorderSide(color: markColor(context), width: 4.0)
+                ? BorderSide(color: markColor(context), width: 1.5)
                 : BorderSide.none,
           ),
           child: InkWell(
@@ -109,21 +110,23 @@ class RouteOption extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (mark != null) ...[
-                    Chip(
-                      label: markLabel(),
-                      visualDensity: VisualDensity.compact,
-                      backgroundColor:
-                          selected ? markColor(context) : Colors.transparent,
-                      labelPadding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      labelStyle:
-                          TextStyle(color: selected ? Colors.white : null),
-                      shape: StadiumBorder(
-                        side: BorderSide(
-                          color: markColor(context),
-                          width: 3.0,
-                        ),
-                      ),
-                    ),
+                    // Chip(
+                    //   label: markLabel(),
+                    //   visualDensity: VisualDensity.compact,
+                    //   backgroundColor:
+                    //       selected ? markColor(context) : Colors.transparent,
+                    //   labelPadding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    //   labelStyle:
+                    //       TextStyle(color: selected ? Colors.white : null),
+                    //   shape: StadiumBorder(
+                    //     side: BorderSide(
+                    //       color: markColor(context),
+                    //       width: 3.0,
+                    //     ),
+                    //   ),
+                    // ),
+                    markLabel(
+                        colorOverride: selected ? markColor(context) : null),
                     const SizedBox(height: 6.0),
                   ],
                   Wrap(
