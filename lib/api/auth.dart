@@ -143,6 +143,7 @@ class PremiumAuth {
           if (kDebugMode) {
             print(FilcAPI.plusActivation);
             print(_settings.plusSessionId);
+            print(_settings.xFilcId);
           }
 
           final res = await http.post(Uri.parse(FilcAPI.plusActivation), body: {

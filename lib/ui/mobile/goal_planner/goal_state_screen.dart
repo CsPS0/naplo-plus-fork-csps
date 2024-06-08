@@ -16,13 +16,12 @@ import 'package:refilc_mobile_ui/common/round_border_icon.dart';
 import 'package:refilc_plus/providers/goal_provider.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_planner.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/goal_state_screen.i18n.dart';
+import 'package:refilc_plus/ui/mobile/goal_planner/goal_track_popup.dart';
 import 'package:refilc_plus/ui/mobile/goal_planner/route_option.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
 
-import 'goal_planner_screen.dart';
 import 'graph.dart';
 
 class GoalStateScreen extends StatefulWidget {
@@ -333,11 +332,13 @@ class _GoalStateScreenState extends State<GoalStateScreen> {
                                 ),
                                 RawMaterialButton(
                                   onPressed: () async {
-                                    Navigator.of(context).push(
-                                        CupertinoPageRoute(
-                                            builder: (context) =>
-                                                GoalPlannerScreen(
-                                                    subject: widget.subject)));
+                                    GoalTrackPopup.show(context,
+                                        subject: widget.subject);
+                                    // Navigator.of(context).push(
+                                    //     CupertinoPageRoute(
+                                    //         builder: (context) =>
+                                    //             GoalPlannerScreen(
+                                    //                 subject: widget.subject)));
                                   },
                                   fillColor: Colors.black,
                                   shape: const StadiumBorder(),

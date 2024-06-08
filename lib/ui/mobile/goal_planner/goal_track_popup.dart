@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:refilc/api/providers/database_provider.dart';
 import 'package:refilc/api/providers/user_provider.dart';
 import 'package:refilc/helpers/average_helper.dart';
-import 'package:refilc/ui/widgets/grade/grade_tile.dart';
 import 'package:refilc_kreta_api/models/grade.dart';
 import 'package:refilc_kreta_api/models/subject.dart';
 import 'package:refilc_kreta_api/providers/grade_provider.dart';
@@ -27,6 +26,7 @@ class GoalTrackPopup extends StatefulWidget {
         context,
         child: GoalTrackPopup(subject: subject),
         showHandle: true,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       );
 
   @override
