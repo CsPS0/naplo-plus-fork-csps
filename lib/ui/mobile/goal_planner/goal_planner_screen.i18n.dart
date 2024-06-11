@@ -14,6 +14,13 @@ extension Localization on String {
           "unsolvable": "Unsolvable :(",
           "unreachable": "Unreachable :(",
           "reached": "Already reached! :D",
+          // new plan popup
+          "goalplan_title": "Goal Planning",
+          "goalplan_subtitle": "Enter the average you want to achieve!",
+          "goalplan_plans_title": "Choose the route",
+          "goalplan_plans_subtitle":
+              "You can achieve your goal with these tickets, choose one that you like the most! You can change this later.",
+          "show_my_ways": "Show me my options!",
         },
         "hu_hu": {
           "goal_planner_title": "Cél követés",
@@ -26,6 +33,13 @@ extension Localization on String {
           "unsolvable": "Megoldhatatlan :(",
           "unreachable": "Elérhetetlen :(",
           "reached": "Már elérted! :D",
+          // new plan popup
+          "goalplan_title": "Cél kitűzése",
+          "goalplan_subtitle": "Add meg az elérni kívánt átlagot!",
+          "goalplan_plans_title": "Válaszd ki az utat",
+          "goalplan_plans_subtitle":
+              "Ezekkel a jegyekkel érheted el a célodat, válassz egyet, ami a legjobban tetszik! Ezt később változtathatod.",
+          "show_my_ways": "Mutasd a lehetőségeimet!",
         },
         "de_de": {
           "goal_planner_title": "Zielplanung",
@@ -38,6 +52,14 @@ extension Localization on String {
           "unsolvable": "Unlösbar :(",
           "unreachable": "Unerreichbar :(",
           "reached": "Bereits erreicht! :D",
+          // new plan popup
+          "goalplan_title": "Zielplanung",
+          "goalplan_subtitle":
+              "Geben Sie den Durchschnitt ein, den Sie erreichen möchten!",
+          "goalplan_plans_title": "Wählen Sie die Route",
+          "goalplan_plans_subtitle":
+              "Sie können Ihr Ziel mit diesen Tickets erreichen. Wählen Sie eines aus, das Ihnen am besten gefällt! Sie können dies später ändern.",
+          "show_my_ways": "Zeigen Sie mir meine Optionen!",
         },
       };
 
