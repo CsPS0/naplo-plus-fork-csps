@@ -26,6 +26,7 @@ enum PremiumFeature {
   goalPlanner, // sponge
   gradeRarities,
   calendarSync,
+  gradeExporting, // basic
 }
 
 enum PremiumFeatureLevel {
@@ -60,6 +61,7 @@ const Map<PremiumFeature, PremiumFeatureLevel> _featureLevels = {
   PremiumFeature.goalPlanner: PremiumFeatureLevel.gold,
   PremiumFeature.gradeRarities: PremiumFeatureLevel.basic,
   PremiumFeature.calendarSync: PremiumFeatureLevel.gold,
+  PremiumFeature.gradeExporting: PremiumFeatureLevel.basic,
 };
 
 // const Map<PremiumFeature, String> _featureAssets = {
@@ -115,6 +117,7 @@ const Map<PremiumFeature, String> _featureTitles = {
   PremiumFeature.goalPlanner: "u_title_10",
   PremiumFeature.gradeRarities: "u_title_11",
   PremiumFeature.calendarSync: "u_title_12",
+  PremiumFeature.gradeExporting: "u_title_13",
 };
 
 const Map<PremiumFeature, String> _featureDescriptions = {
@@ -147,6 +150,7 @@ const Map<PremiumFeature, String> _featureDescriptions = {
   PremiumFeature.goalPlanner: "u_desc_10",
   PremiumFeature.gradeRarities: "u_desc_11",
   PremiumFeature.calendarSync: "u_desc_12",
+  PremiumFeature.gradeExporting: "u_desc_13",
 };
 
 // class PremiumLockedFeatureUpsell extends StatelessWidget {

@@ -14,6 +14,7 @@ class PremiumScopes {
   static const welcomeMessage = "refilc.plus.WELCOME_MESSAGE";
   static const unlimitedSelfNotes = "refilc.plus.UNLIMITED_SELF_NOTES";
   static const customGradeRarities = "refilc.plus.CUSTOM_GRADE_RARITIES";
+  static const gradeExporting = "refilc.plus.GRADE_EXPORTING";
   // tier scope
   // static const tierCap = "refilc.plus.tier.CAP";
 

@@ -18,6 +18,7 @@ extension Localization on String {
           "u_title_10": "Need more suggestions?",
           "u_title_11": "Not epic, but ultra-super?",
           "u_title_12": "Do you even need it in your calendar?!",
+          "u_title_13": "Wanna see your past years' grades?",
           // upsell descriptions
           "u_desc_1": "The limit increases with each tier.",
           "u_desc_2":
@@ -35,6 +36,7 @@ extension Localization on String {
               "Support us on Gold tier and use all the features of goal setting!",
           "u_desc_11": "With reFilc+ lowest tier it's also available!",
           "u_desc_12": "Sync your time-table with reFilc+ Gold!",
+          "u_desc_13": "You can export every year's grades with reFilc+!",
           // button
           "subscribe": "Subscribe",
           "subscriber": "Subscribed",
@@ -56,6 +58,7 @@ extension Localization on String {
           "u_title_10": "Még több javaslat kell?",
           "u_title_11": "Nem epikus, hanem ultraszuper?",
           "u_title_12": "Még a naptáradba is kell?!",
+          "u_title_13": "Szeretnéd látni az előző évi jegyeid?",
           // upsell descriptions
           "u_desc_1": "Minden támogatási szinttel egyre magasabb a limit.",
           "u_desc_2":
@@ -73,6 +76,7 @@ extension Localization on String {
               "Támogass Gold szinten és használd ki a cél kitűzés minden funkcióját!",
           "u_desc_11": "A reFilc+ alap szintjével ez is elérhető!",
           "u_desc_12": "Szinkronizáld az órarended reFilc+ Gold-al!",
+          "u_desc_13": "Minden évi jegyedet exportálhatod reFilc+-al!",
           // button
           "subscribe": "Előfizetés",
           "subscriber": "Előfizetve",
@@ -96,6 +100,7 @@ extension Localization on String {
           "u_title_11":
               "Willst du vielleicht statt episch etwas anderes wie super?",
           "u_title_12": "Brauchst du das wirklich in deinem Kalender?!",
+          "u_title_13": "Möchtest du deine Noten der vergangenen Jahre sehen?",
           // upsell descriptions
           "u_desc_1": "Das limit erhöht sich mit jedem Abo-plan.",
           "u_desc_2":
@@ -116,6 +121,7 @@ extension Localization on String {
           "u_desc_11":
               "Mit reFilc+ niedrigstem Abo-Plan ist es auch Verfügbar!",
           "u_desc_12": "Synchronisiere deinen Stundenplan mit reFilc+ Gold!",
+          "u_desc_13": "Du kannst jede Jahresnote mit reFilc+ exportieren!",
           // button
           "subscribe": "Abonnieren",
           "subscriber": "im Abonnement",
