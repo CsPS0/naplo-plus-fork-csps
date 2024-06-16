@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:refilc/api/providers/user_provider.dart';
@@ -68,12 +69,12 @@ class MenuGradeExporting extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
 
-                  if (!Provider.of<PlusProvider>(context, listen: false)
-                      .hasScope(PremiumScopes.gradeExporting)) {
-                    return PlusLockedFeaturePopup.show(
-                        context: context,
-                        feature: PremiumFeature.gradeExporting);
-                  }
+                  // if (!Provider.of<PlusProvider>(context, listen: false)
+                  //     .hasScope(PremiumScopes.gradeExporting)) {
+                  //   return PlusLockedFeaturePopup.show(
+                  //       context: context,
+                  //       feature: PremiumFeature.gradeExporting);
+                  // }
 
                   Navigator.of(context, rootNavigator: true).push(
                       CupertinoPageRoute(
@@ -174,20 +175,21 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
                                   .grades;
 
                               // gmake a list of grades in json format
-                              List<Map<String, dynamic>> gradesList = [
+                              List<Map<dynamic, dynamic>> gradesList = [
                                 for (Grade grade in grades)
-                                  {
-                                    '"subject"': '"${grade.subject.name}"',
-                                    '"value"': grade.value.value,
-                                    '"value_name"':
-                                        '"${grade.value.valueName}"',
-                                    '"date"':
-                                        '"${grade.date.toIso8601String()}"',
-                                    '"weight"': grade.value.weight,
-                                    '"type"': '"${grade.type.name}"',
-                                    '"description"': '"${grade.description}"',
-                                    '"teacher"': '"${grade.teacher.name}"',
-                                  }
+                                  // {
+                                  //   '"subject"': '"${grade.subject.name}"',
+                                  //   '"value"': grade.value.value,
+                                  //   '"value_name"':
+                                  //       '"${grade.value.valueName}"',
+                                  //   '"date"':
+                                  //       '"${grade.date.toIso8601String()}"',
+                                  //   '"weight"': grade.value.weight,
+                                  //   '"type"': '"${grade.type.name}"',
+                                  //   '"description"': '"${grade.description}"',
+                                  //   '"teacher"': '"${grade.teacher.name}"',
+                                  // }
+                                  grade.json ?? {},
                               ];
 
                               // convert list to json file
@@ -195,7 +197,7 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
 
                               File file = File('${directory.path}/grades.json');
                               file.writeAsStringSync(
-                                gradesList.toString(),
+                                jsonEncode(gradesList),
                               );
 
                               // convert json to bytes
