@@ -69,12 +69,12 @@ class MenuGradeExporting extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
 
-                  // if (!Provider.of<PlusProvider>(context, listen: false)
-                  //     .hasScope(PremiumScopes.gradeExporting)) {
-                  //   return PlusLockedFeaturePopup.show(
-                  //       context: context,
-                  //       feature: PremiumFeature.gradeExporting);
-                  // }
+                  if (!Provider.of<PlusProvider>(context, listen: false)
+                      .hasScope(PremiumScopes.gradeExporting)) {
+                    return PlusLockedFeaturePopup.show(
+                        context: context,
+                        feature: PremiumFeature.gradeExporting);
+                  }
 
                   Navigator.of(context, rootNavigator: true).push(
                       CupertinoPageRoute(
