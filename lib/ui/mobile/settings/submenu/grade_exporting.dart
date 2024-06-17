@@ -23,6 +23,7 @@ import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:refilc_plus/ui/mobile/plus/upsell.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:refilc_mobile_ui/common/chips/new_chip.dart';
 
 class MenuGradeExporting extends StatelessWidget {
   const MenuGradeExporting({
@@ -94,10 +95,16 @@ class MenuGradeExporting extends StatelessWidget {
         size: 22.0,
         color: AppColors.of(context).text.withOpacity(.95),
       ),
-      trailing: Icon(
-        FeatherIcons.chevronRight,
-        size: 22.0,
-        color: AppColors.of(context).text.withOpacity(0.95),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const NewChip(),
+          Icon(
+            FeatherIcons.chevronRight,
+            size: 22.0,
+            color: AppColors.of(context).text.withOpacity(0.95),
+          )
+        ],
       ),
       borderRadius: borderRadius,
     );
