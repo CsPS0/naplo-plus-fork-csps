@@ -70,6 +70,17 @@ class MenuGradeExporting extends StatelessWidget {
         //         onPressed: () {
         //           Navigator.of(context).pop();
 
+        Provider.of<SettingsProvider>(context, listen: false).update(
+          unseenNewFeatures: List.from(
+            Provider.of<SettingsProvider>(context, listen: false)
+                .unseenNewFeatures
+              ..remove('grade_exporting'),
+          ),
+        );
+        // Provider.of<SettingsProvider>(context, listen: false).update(
+        //   unseenNewFeatures: ['grade_exporting'],
+        // );
+
         if (!Provider.of<PlusProvider>(context, listen: false)
             .hasScope(PremiumScopes.gradeExporting)) {
           return PlusLockedFeaturePopup.show(
@@ -98,7 +109,10 @@ class MenuGradeExporting extends StatelessWidget {
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const NewChip(),
+          if (Provider.of<SettingsProvider>(context)
+              .unseenNewFeatures
+              .contains('grade_exporting'))
+            const NewChip(),
           Icon(
             FeatherIcons.chevronRight,
             size: 22.0,
