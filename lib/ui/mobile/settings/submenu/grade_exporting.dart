@@ -45,45 +45,43 @@ class MenuGradeExporting extends StatelessWidget {
 
         // Navigator.of(context, rootNavigator: true).push(CupertinoPageRoute(
         //     builder: (context) => const CalendarSyncScreen()));
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text("Figyelem!"),
-            content: const Text(
-                "Az exportált jegyek jelenleg még nem megtekinthetők a reFilc-ben, csak te magad tudod átnézni őket JSON formátumban. A jövőben ez a funkció bővülni fog, és a jegyeket meg is tekintheted majd a reFilc felületén."),
-            actions: [
-              // TextButton(
-              //   child: const Text(
-              //     "Vissza",
-              //     style: TextStyle(fontWeight: FontWeight.w500),
-              //   ),
-              //   onPressed: () {
-              //     Navigator.of(context).pop();
-              //   },
-              // ),
-              TextButton(
-                child: const Text(
-                  "Tovább",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pop();
+        // showDialog(
+        //   context: context,
+        //   builder: (context) => AlertDialog(
+        //     title: const Text("Figyelem!"),
+        //     content: const Text(
+        //         "Az exportált jegyek jelenleg még nem megtekinthetők a reFilc-ben, csak te magad tudod átnézni őket JSON formátumban. A jövőben ez a funkció bővülni fog, és a jegyeket meg is tekintheted majd a reFilc felületén."),
+        //     actions: [
+        //       // TextButton(
+        //       //   child: const Text(
+        //       //     "Vissza",
+        //       //     style: TextStyle(fontWeight: FontWeight.w500),
+        //       //   ),
+        //       //   onPressed: () {
+        //       //     Navigator.of(context).pop();
+        //       //   },
+        //       // ),
+        //       TextButton(
+        //         child: const Text(
+        //           "Tovább",
+        //           style: TextStyle(fontWeight: FontWeight.w500),
+        //         ),
+        //         onPressed: () {
+        //           Navigator.of(context).pop();
 
-                  if (!Provider.of<PlusProvider>(context, listen: false)
-                      .hasScope(PremiumScopes.gradeExporting)) {
-                    return PlusLockedFeaturePopup.show(
-                        context: context,
-                        feature: PremiumFeature.gradeExporting);
-                  }
+        if (!Provider.of<PlusProvider>(context, listen: false)
+            .hasScope(PremiumScopes.gradeExporting)) {
+          return PlusLockedFeaturePopup.show(
+              context: context, feature: PremiumFeature.gradeExporting);
+        }
 
-                  Navigator.of(context, rootNavigator: true).push(
-                      CupertinoPageRoute(
-                          builder: (context) => const GradeExportingScreen()));
-                },
-              ),
-            ],
-          ),
-        );
+        Navigator.of(context, rootNavigator: true).push(CupertinoPageRoute(
+            builder: (context) => const GradeExportingScreen()));
+        //         },
+        //       ),
+        //     ],
+        //   ),
+        // );
       },
       title: Text(
         "grade_exporting".i18n,
@@ -244,11 +242,11 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      const Text(
-                          "Az exportált jegyek jelenleg még nem megtekinthetők a reFilc-ben, csak te magad tudod átnézni őket JSON formátumban. A jövőben ez a funkció bővülni fog, és a jegyeket meg is tekintheted majd a reFilc felületén."),
+                      // const SizedBox(
+                      //   height: 10.0,
+                      // ),
+                      // const Text(
+                      //     "Az exportált jegyek jelenleg még nem megtekinthetők a reFilc-ben, csak te magad tudod átnézni őket JSON formátumban. A jövőben ez a funkció bővülni fog, és a jegyeket meg is tekintheted majd a reFilc felületén."),
                     ],
                   ),
                 ],
