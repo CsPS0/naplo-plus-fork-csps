@@ -24,7 +24,7 @@ dependencies:
   uni_links: ^0.5.1
   url_launcher: ^6.2.5
   dropdown_button2: ^2.3.9
-  home_widget: ^0.4.1
+  home_widget: ^0.6.0
   image_picker: ^1.0.7
   image_crop:
     git:
@@ -36,7 +36,7 @@ dependencies:
   android_dynamic_icon: ^1.0.1
   i18n_extension: ^12.0.1
   http: ^1.2.0
-  fl_chart: ^0.45.1
+  fl_chart: ^0.68.0
   flutter_dynamic_icon_plus: ^1.1.2
   share_plus: ^7.2.2
   path_provider: ^2.1.3
