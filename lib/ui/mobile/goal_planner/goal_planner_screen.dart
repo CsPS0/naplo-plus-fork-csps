@@ -360,7 +360,7 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
           child: Container(
             padding: const EdgeInsets.only(top: 24.0),
             decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.background,
+                color: Theme.of(context).colorScheme.surface,
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(24.0)),
                 boxShadow: [

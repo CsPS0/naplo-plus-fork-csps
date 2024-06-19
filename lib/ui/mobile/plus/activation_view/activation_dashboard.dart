@@ -145,9 +145,9 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                     child: TextButton.icon(
                       onPressed: onManualActivation,
                       style: ButtonStyle(
-                        foregroundColor: MaterialStatePropertyAll(
+                        foregroundColor: WidgetStatePropertyAll(
                             Theme.of(context).colorScheme.secondary),
-                        overlayColor: MaterialStatePropertyAll(Theme.of(context)
+                        overlayColor: WidgetStatePropertyAll(Theme.of(context)
                             .colorScheme
                             .secondary
                             .withOpacity(.1)),
@@ -182,8 +182,8 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                 },
                 style: ButtonStyle(
                   foregroundColor:
-                      MaterialStatePropertyAll(AppColors.of(context).text),
-                  overlayColor: MaterialStatePropertyAll(
+                      WidgetStatePropertyAll(AppColors.of(context).text),
+                  overlayColor: WidgetStatePropertyAll(
                       AppColors.of(context).text.withOpacity(.1)),
                 ),
                 icon: const Icon(FeatherIcons.arrowLeft, size: 20.0),

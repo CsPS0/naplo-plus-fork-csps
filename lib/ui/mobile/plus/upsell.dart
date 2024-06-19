@@ -242,10 +242,10 @@ const Map<PremiumFeature, String> _featureDescriptions = {
 //                 child: TextButton(
 //                   style: ButtonStyle(
 //                       backgroundColor:
-//                           MaterialStatePropertyAll(color.withOpacity(.25)),
-//                       foregroundColor: MaterialStatePropertyAll(color),
+//                           WidgetStatePropertyAll(color.withOpacity(.25)),
+//                       foregroundColor: WidgetStatePropertyAll(color),
 //                       overlayColor:
-//                           MaterialStatePropertyAll(color.withOpacity(.1))),
+//                           WidgetStatePropertyAll(color.withOpacity(.1))),
 //                   onPressed: () {
 //                     Navigator.of(context, rootNavigator: true)
 //                         .push(MaterialPageRoute(builder: (context) {
