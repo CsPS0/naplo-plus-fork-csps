@@ -2,7 +2,7 @@ name: refilc_plus
 publish_to: "none"
 
 environment:
-  sdk: ">=2.17.0 <=3.3.2"
+  sdk: ">=3.3.2 <=3.4.3"
 
 dependencies:
   flutter:
@@ -34,7 +34,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   flutter_dynamic_icon: ^2.1.0
   android_dynamic_icon: ^1.0.1
-  i18n_extension: ^11.0.12
+  i18n_extension: ^12.0.1
   http: ^1.2.0
   fl_chart: ^0.45.1
   flutter_dynamic_icon_plus: ^1.1.2
