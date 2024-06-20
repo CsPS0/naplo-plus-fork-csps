@@ -148,21 +148,32 @@ class GoalGraphState extends State<GoalGraph> {
                               preventCurveOverShooting: true,
                               spots: subjectSpots,
                               isCurved: true,
-                              colors: [averageColor],
+                              color: averageColor,
                               barWidth: 8,
                               isStrokeCapRound: true,
-                              dotData: FlDotData(show: false),
+                              dotData: const FlDotData(show: false),
                               belowBarData: BarAreaData(
                                 show: true,
-                                colors: [
-                                  averageColor.withOpacity(0.7),
-                                  averageColor.withOpacity(0.3),
-                                  averageColor.withOpacity(0.2),
-                                  averageColor.withOpacity(0.1),
-                                ],
-                                gradientColorStops: [0.1, 0.6, 0.8, 1],
-                                gradientFrom: const Offset(0, 0),
-                                gradientTo: const Offset(0, 1),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    averageColor.withOpacity(0.7),
+                                    averageColor.withOpacity(0.3),
+                                    averageColor.withOpacity(0.2),
+                                    averageColor.withOpacity(0.1),
+                                  ],
+                                  stops: const [0.1, 0.6, 0.8, 1],
+                                ),
+                                // colors: [
+                                //   averageColor.withOpacity(0.7),
+                                //   averageColor.withOpacity(0.3),
+                                //   averageColor.withOpacity(0.2),
+                                //   averageColor.withOpacity(0.1),
+                                // ],
+                                // gradientColorStops: [0.1, 0.6, 0.8, 1],
+                                // gradientFrom: const Offset(0, 0),
+                                // gradientTo: const Offset(0, 1),
                               ),
                             ),
                             if (ghostData.isNotEmpty && ghostSpots.isNotEmpty)
@@ -170,27 +181,37 @@ class GoalGraphState extends State<GoalGraph> {
                                 preventCurveOverShooting: true,
                                 spots: ghostSpots,
                                 isCurved: true,
-                                colors: [AppColors.of(context).text],
+                                color: AppColors.of(context).text,
                                 barWidth: 8,
                                 isStrokeCapRound: true,
-                                dotData: FlDotData(show: false),
+                                dotData: const FlDotData(show: false),
                                 belowBarData: BarAreaData(
                                   show: true,
-                                  colors: [
-                                    AppColors.of(context).text.withOpacity(0.7),
-                                    AppColors.of(context).text.withOpacity(0.3),
-                                    AppColors.of(context).text.withOpacity(0.2),
-                                    AppColors.of(context).text.withOpacity(0.1),
-                                  ],
-                                  gradientColorStops: [0.1, 0.6, 0.8, 1],
-                                  gradientFrom: const Offset(0, 0),
-                                  gradientTo: const Offset(0, 1),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      AppColors.of(context)
+                                          .text
+                                          .withOpacity(0.7),
+                                      AppColors.of(context)
+                                          .text
+                                          .withOpacity(0.3),
+                                      AppColors.of(context)
+                                          .text
+                                          .withOpacity(0.2),
+                                      AppColors.of(context)
+                                          .text
+                                          .withOpacity(0.1),
+                                    ],
+                                    stops: const [0.1, 0.6, 0.8, 1],
+                                  ),
                                 ),
                               ),
                           ],
                           minY: 1,
                           maxY: 5,
-                          gridData: FlGridData(
+                          gridData: const FlGridData(
                             show: true,
                             horizontalInterval: 1,
                             // checkToShowVerticalLine: (_) => false,
@@ -204,8 +225,8 @@ class GoalGraphState extends State<GoalGraph> {
                             // ),
                           ),
                           lineTouchData: LineTouchData(
-                            touchTooltipData: LineTouchTooltipData(
-                              tooltipBgColor: Colors.grey.shade800,
+                            touchTooltipData: const LineTouchTooltipData(
+                              // tooltipBgColor: Colors.grey.shade800,
                               fitInsideVertically: true,
                               fitInsideHorizontally: true,
                             ),
