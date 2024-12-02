@@ -8,9 +8,14 @@ import 'package:provider/provider.dart';
 import 'package:refilc_plus/ui/mobile/plus/plus_things.i18n.dart';
 
 class PremiumActivationView extends StatefulWidget {
-  const PremiumActivationView({super.key, required this.product});
+  const PremiumActivationView({
+    super.key,
+    required this.product,
+    required this.paymentProvider,
+  });
 
   final String product;
+  final String paymentProvider;
 
   @override
   State<PremiumActivationView> createState() => _PremiumActivationViewState();
@@ -24,7 +29,8 @@ class _PremiumActivationViewState extends State<PremiumActivationView>
   @override
   void initState() {
     super.initState();
-    context.read<PlusProvider>().auth.initAuth(product: widget.product);
+    context.read<PlusProvider>().auth.initAuth(
+        product: widget.product, paymentProvider: widget.paymentProvider);
 
     animation =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));

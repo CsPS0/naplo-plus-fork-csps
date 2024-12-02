@@ -25,7 +25,10 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
     });
     final result =
         // ignore: use_build_context_synchronously
-        await context.read<PlusProvider>().auth.finishAuth(data.text!);
+        await context
+            .read<PlusProvider>()
+            .auth
+            .finishAuth(data.text!);
     setState(() {
       manualActivationLoading = false;
     });

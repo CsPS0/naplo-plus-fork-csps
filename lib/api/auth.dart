@@ -45,7 +45,7 @@ class PremiumAuth {
   //   }
   // }
 
-  initAuth({required String product}) {
+  initAuth({required String product, required String paymentProvider}) {
     try {
       _sub ??= uriLinkStream.listen(
         (Uri? uri) {
@@ -61,9 +61,17 @@ class PremiumAuth {
         },
       );
 
+      String url = "https://refilcapp.hu";
+      if (paymentProvider == "stripe") {
+        url =
+            "${FilcAPI.payment}/stripe-create-checkout?product=$product&rf_uinid=${_settings.xFilcId}";
+      } else if (paymentProvider == "paypal") {
+        url =
+            "https://refilcapp.hu/payment/paypal/mobile-checkout?product=$product&device_id=${_settings.xFilcId}";
+      }
+
       launchUrl(
-        Uri.parse(
-            "${FilcAPI.payment}/stripe-create-checkout?product=$product&rf_uinid=${_settings.xFilcId}"),
+        Uri.parse(url),
         mode: LaunchMode.externalApplication,
       );
     } catch (err, sta) {
