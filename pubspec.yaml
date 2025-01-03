@@ -2,7 +2,7 @@ name: refilc_plus
 publish_to: "none"
 
 environment:
-  sdk: ">=3.3.2 <=3.4.3"
+  sdk: ">=3.3.2 <=3.6.0"
 
 dependencies:
   flutter:
@@ -29,9 +29,7 @@ dependencies:
       url: https://github.com/refilc/home_widget.git
       ref: flutter-beta
   image_picker: ^1.0.7
-  image_crop:
-    git:
-      url: https://github.com/kimaah/image_crop.git
+  image_crop_plus: ^1.0.0
   lottie: ^3.1.0
   animations: ^2.0.11
   flutter_svg: ^2.0.10+1
