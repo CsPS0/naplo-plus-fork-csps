@@ -10,7 +10,7 @@ import 'package:refilc_plus/models/premium_result.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:uni_links/uni_links.dart';
+import 'package:app_links/app_links.dart';
 import 'package:http/http.dart' as http;
 // import 'package:home_widget/home_widget.dart';
 
@@ -47,7 +47,8 @@ class PremiumAuth {
 
   initAuth({required String product, required String paymentProvider}) {
     try {
-      _sub ??= uriLinkStream.listen(
+      final appLinks = AppLinks();
+      _sub ??= appLinks.uriLinkStream.listen(
         (Uri? uri) {
           if (uri != null) {
             final sessionId = uri.queryParameters['session_id'];
