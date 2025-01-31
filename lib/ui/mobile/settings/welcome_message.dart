@@ -36,13 +36,13 @@ class WelcomeMessagePanelButton extends StatelessWidget {
       title: Text(
         "welcome_msg".i18n,
         style: TextStyle(
-          color: AppColors.of(context).text.withOpacity(.95),
+          color: AppColors.of(context).text.withValues(alpha: .95),
         ),
       ),
       leading: Icon(
         FeatherIcons.smile,
         size: 22.0,
-        color: AppColors.of(context).text.withOpacity(.95),
+        color: AppColors.of(context).text.withValues(alpha: .95),
       ),
       trailing: Container(
         constraints: const BoxConstraints(maxWidth: 100),

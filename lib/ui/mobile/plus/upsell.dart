@@ -242,10 +242,10 @@ const Map<PremiumFeature, String> _featureDescriptions = {
 //                 child: TextButton(
 //                   style: ButtonStyle(
 //                       backgroundColor:
-//                           WidgetStatePropertyAll(color.withOpacity(.25)),
+//                           WidgetStatePropertyAll(color.withValues(alpha: .25)),
 //                       foregroundColor: WidgetStatePropertyAll(color),
 //                       overlayColor:
-//                           WidgetStatePropertyAll(color.withOpacity(.1))),
+//                           WidgetStatePropertyAll(color.withValues(alpha: .1))),
 //                   onPressed: () {
 //                     Navigator.of(context, rootNavigator: true)
 //                         .push(MaterialPageRoute(builder: (context) {
@@ -358,7 +358,7 @@ class PlusLockedFeaturePopup extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(
                         0xFFF7F9FC,
-                      ).withOpacity(0.7),
+                      ).withValues(alpha: 0.7),
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(12.0),
                         bottom: Radius.circular(6.0),
@@ -415,7 +415,7 @@ class PlusLockedFeaturePopup extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(
                         0xFFF7F9FC,
-                      ).withOpacity(0.7),
+                      ).withValues(alpha: 0.7),
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(6.0),
                         bottom: Radius.circular(12.0),

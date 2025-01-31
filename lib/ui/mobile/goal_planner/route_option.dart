@@ -58,7 +58,7 @@ class RouteOption extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22.0,
                 fontWeight: FontWeight.w500,
-                color: AppColors.of(context).text.withOpacity(.7),
+                color: AppColors.of(context).text.withValues(alpha: .7),
               ),
             ),
             const SizedBox(width: 4.0),
@@ -76,7 +76,7 @@ class RouteOption extends StatelessWidget {
           width: 32.0,
           child: Center(
               child: Icon(Icons.add,
-                  color: AppColors.of(context).text.withOpacity(.5))),
+                  color: AppColors.of(context).text.withValues(alpha: .5))),
         ));
       }
     }
@@ -88,8 +88,9 @@ class RouteOption extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Card(
-          surfaceTintColor:
-              selected ? markColor(context).withOpacity(.2) : Colors.white,
+          surfaceTintColor: selected
+              ? markColor(context).withValues(alpha: .2)
+              : Colors.white,
           margin: EdgeInsets.zero,
           elevation: 5,
           shadowColor: Colors.transparent,
@@ -170,7 +171,7 @@ class RouteOptionRow extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22.0,
                 fontWeight: FontWeight.w500,
-                color: AppColors.of(context).text.withOpacity(.7),
+                color: AppColors.of(context).text.withValues(alpha: .7),
               ),
             ),
             const SizedBox(width: 4.0),
@@ -188,7 +189,7 @@ class RouteOptionRow extends StatelessWidget {
           width: 32.0,
           child: Center(
               child: Icon(Icons.add,
-                  color: AppColors.of(context).text.withOpacity(.5))),
+                  color: AppColors.of(context).text.withValues(alpha: .5))),
         ));
       }
     }

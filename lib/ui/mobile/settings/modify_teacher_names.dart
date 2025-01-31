@@ -46,12 +46,12 @@
 //         style: TextStyle(
 //             color: AppColors.of(context)
 //                 .text
-//                 .withOpacity(settings.renamedTeachersEnabled ? 1.0 : .5)),
+//                 .withValues(alpha: settings.renamedTeachersEnabled ? 1.0 : .5)),
 //       ),
 //       leading: settings.renamedTeachersEnabled
 //           ? const Icon(FeatherIcons.users)
 //           : Icon(FeatherIcons.users,
-//               color: AppColors.of(context).text.withOpacity(.25)),
+//               color: AppColors.of(context).text.withValues(alpha: .25)),
 //       trailingDivider: true,
 //       trailing: Switch(
 //         onChanged: (v) async {
@@ -194,7 +194,7 @@
 //                             .name,
 //                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
 //                         fontWeight: FontWeight.w700,
-//                         color: AppColors.of(context).text.withOpacity(0.75)),
+//                         color: AppColors.of(context).text.withValues(alpha: 0.75)),
 //                     overflow: TextOverflow.ellipsis,
 //                     maxLines: 2,
 //                     textAlign: TextAlign.center,
@@ -325,7 +325,7 @@
 //                         style: TextStyle(
 //                           fontWeight: FontWeight.w600,
 //                           fontSize: 18,
-//                           color: AppColors.of(context).text.withOpacity(.85),
+//                           color: AppColors.of(context).text.withValues(alpha: .85),
 //                         ),
 //                       ),
 //                     ),
@@ -418,7 +418,7 @@
 //       visualDensity: VisualDensity.compact,
 //       onTap: () {},
 //       leading: Icon(FeatherIcons.user,
-//           color: AppColors.of(context).text.withOpacity(.75)),
+//           color: AppColors.of(context).text.withValues(alpha: .75)),
 //       title: InkWell(
 //         onTap: modifyCallback,
 //         child: Column(
@@ -429,7 +429,7 @@
 //               style: TextStyle(
 //                   fontWeight: FontWeight.w500,
 //                   fontSize: 14,
-//                   color: AppColors.of(context).text.withOpacity(.75)),
+//                   color: AppColors.of(context).text.withValues(alpha: .75)),
 //               maxLines: 1,
 //               overflow: TextOverflow.ellipsis,
 //             ),
@@ -445,7 +445,7 @@
 //       trailing: InkWell(
 //         onTap: removeCallback,
 //         child: Icon(FeatherIcons.trash,
-//             color: AppColors.of(context).red.withOpacity(.75)),
+//             color: AppColors.of(context).red.withValues(alpha: .75)),
 //       ),
 //     );
 //   }

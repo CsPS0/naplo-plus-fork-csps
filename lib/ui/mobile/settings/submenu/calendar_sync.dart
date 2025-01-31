@@ -84,18 +84,18 @@ class MenuCalendarSync extends StatelessWidget {
       title: Text(
         "calendar_sync".i18n,
         style: TextStyle(
-          color: AppColors.of(context).text.withOpacity(.95),
+          color: AppColors.of(context).text.withValues(alpha: .95),
         ),
       ),
       leading: Icon(
         FeatherIcons.calendar,
         size: 22.0,
-        color: AppColors.of(context).text.withOpacity(.95),
+        color: AppColors.of(context).text.withValues(alpha: .95),
       ),
       trailing: Icon(
         FeatherIcons.chevronRight,
         size: 22.0,
-        color: AppColors.of(context).text.withOpacity(0.95),
+        color: AppColors.of(context).text.withValues(alpha: 0.95),
       ),
       borderRadius: borderRadius,
     );
@@ -181,7 +181,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                 borderRadius: BorderRadius.circular(16.0),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
+                                    color: Colors.black.withValues(alpha: 0.2),
                                     blurRadius: 4.0,
                                     spreadRadius: 0.01,
                                   ),
@@ -198,10 +198,11 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                             const SizedBox(width: 10),
                             Icon(
                               Icons.sync_alt_outlined,
-                              color: Colors.black.withOpacity(
-                                  thirdPartyProvider.linkedAccounts.isEmpty
-                                      ? 0.2
-                                      : 0.5),
+                              color: Colors.black.withValues(
+                                  alpha:
+                                      thirdPartyProvider.linkedAccounts.isEmpty
+                                          ? 0.2
+                                          : 0.5),
                               size: 20.0,
                             ),
                             const SizedBox(width: 10),
@@ -211,7 +212,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                 borderRadius: BorderRadius.circular(16.0),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
+                                    color: Colors.black.withValues(alpha: 0.2),
                                     blurRadius: 4.0,
                                     spreadRadius: 0.01,
                                   ),
@@ -256,7 +257,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                   style: TextStyle(
                                     color: AppColors.of(context)
                                         .text
-                                        .withOpacity(.95),
+                                        .withValues(alpha: .95),
                                   ),
                                 ),
                                 leading: Image.asset(
@@ -287,7 +288,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                   style: TextStyle(
                                     color: AppColors.of(context)
                                         .text
-                                        .withOpacity(.55),
+                                        .withValues(alpha: .55),
                                     decoration: TextDecoration.lineThrough,
                                   ),
                                 ),
@@ -335,7 +336,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                 style: TextStyle(
                                   color: AppColors.of(context)
                                       .text
-                                      .withOpacity(.95),
+                                      .withValues(alpha: .95),
                                 ),
                               ),
                               leading: Image.asset(
@@ -358,7 +359,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                 style: TextStyle(
                                   color: AppColors.of(context)
                                       .text
-                                      .withOpacity(.95),
+                                      .withValues(alpha: .95),
                                 ),
                               ),
                               trailing: Icon(
@@ -366,7 +367,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                 size: 22.0,
                                 color: AppColors.of(context)
                                     .text
-                                    .withOpacity(0.95),
+                                    .withValues(alpha: 0.95),
                               ),
                               borderRadius: const BorderRadius.vertical(
                                 top: Radius.circular(12),
@@ -453,8 +454,9 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                     style: TextStyle(
                                       color: AppColors.of(context)
                                           .text
-                                          .withOpacity(
-                                              settingsProvider.calSyncShowExams
+                                          .withValues(
+                                              alpha: settingsProvider
+                                                      .calSyncShowExams
                                                   ? .95
                                                   : .25),
                                     ),
@@ -496,10 +498,11 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                     style: TextStyle(
                                       color: AppColors.of(context)
                                           .text
-                                          .withOpacity(settingsProvider
-                                                  .calSyncShowTeacher
-                                              ? .95
-                                              : .25),
+                                          .withValues(
+                                              alpha: settingsProvider
+                                                      .calSyncShowTeacher
+                                                  ? .95
+                                                  : .25),
                                     ),
                                   ),
                                   trailing: Switch(
@@ -539,8 +542,9 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                                     style: TextStyle(
                                       color: AppColors.of(context)
                                           .text
-                                          .withOpacity(
-                                              settingsProvider.calSyncRenamed
+                                          .withValues(
+                                              alpha: settingsProvider
+                                                      .calSyncRenamed
                                                   ? .95
                                                   : .25),
                                     ),
@@ -583,7 +587,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
     //         margin: const EdgeInsets.only(bottom: 3.0),
     //         decoration: BoxDecoration(
     //           border: Border.all(
-    //             color: Theme.of(context).colorScheme.primary.withOpacity(.25),
+    //             color: Theme.of(context).colorScheme.primary.withValues(alpha: .25),
     //             width: 1.0,
     //           ),
     //           borderRadius: BorderRadius.circular(12.0),
@@ -596,7 +600,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
     //           title: Text(
     //             e.summary ?? 'no_title'.i18n,
     //             style: TextStyle(
-    //               color: AppColors.of(context).text.withOpacity(.95),
+    //               color: AppColors.of(context).text.withValues(alpha: .95),
     //             ),
     //           ),
     //           leading: Dot(
@@ -621,7 +625,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
         margin: const EdgeInsets.only(bottom: 3.0),
         decoration: BoxDecoration(
           // border: Border.all(
-          //   color: Theme.of(context).colorScheme.primary.withOpacity(.25),
+          //   color: Theme.of(context).colorScheme.primary.withValues(alpha: .25),
           //   width: 1.0,
           // ),
           color: AppColors.of(context).highlight,
@@ -636,13 +640,13 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
           title: Text(
             'reFilc - Órarend',
             style: TextStyle(
-              color: AppColors.of(context).text.withOpacity(.95),
+              color: AppColors.of(context).text.withValues(alpha: .95),
             ),
           ),
           // leading: Icon(
           //   FeatherIcons.plus,
           //   size: 20.0,
-          //   color: AppColors.of(context).text.withOpacity(0.75),
+          //   color: AppColors.of(context).text.withValues(alpha: 0.75),
           // ),
           leading: Dot(
             color: Theme.of(context).colorScheme.primary,

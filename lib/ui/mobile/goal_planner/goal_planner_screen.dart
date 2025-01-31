@@ -365,7 +365,7 @@ class _GoalPlannerScreenState extends State<GoalPlannerScreen> {
                     const BorderRadius.vertical(top: Radius.circular(24.0)),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(.1),
+                    color: Colors.black.withValues(alpha: .1),
                     blurRadius: 8.0,
                   )
                 ]),

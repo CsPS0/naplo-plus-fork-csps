@@ -98,13 +98,13 @@ class MenuGradeExporting extends StatelessWidget {
       title: Text(
         "grade_exporting".i18n,
         style: TextStyle(
-          color: AppColors.of(context).text.withOpacity(.95),
+          color: AppColors.of(context).text.withValues(alpha: .95),
         ),
       ),
       leading: Icon(
         Icons.toll_rounded,
         size: 22.0,
-        color: AppColors.of(context).text.withOpacity(.95),
+        color: AppColors.of(context).text.withValues(alpha: .95),
       ),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
@@ -116,7 +116,7 @@ class MenuGradeExporting extends StatelessWidget {
           Icon(
             FeatherIcons.chevronRight,
             size: 22.0,
-            color: AppColors.of(context).text.withOpacity(0.95),
+            color: AppColors.of(context).text.withValues(alpha: 0.95),
           )
         ],
       ),
@@ -247,8 +247,9 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
                             title: Text(
                               'JSON',
                               style: TextStyle(
-                                color:
-                                    AppColors.of(context).text.withOpacity(.95),
+                                color: AppColors.of(context)
+                                    .text
+                                    .withValues(alpha: .95),
                               ),
                             ),
                             // leading: Image.asset(
@@ -286,7 +287,7 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
     //         margin: const EdgeInsets.only(bottom: 3.0),
     //         decoration: BoxDecoration(
     //           border: Border.all(
-    //             color: Theme.of(context).colorScheme.primary.withOpacity(.25),
+    //             color: Theme.of(context).colorScheme.primary.withValues(alpha: .25),
     //             width: 1.0,
     //           ),
     //           borderRadius: BorderRadius.circular(12.0),
@@ -299,7 +300,7 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
     //           title: Text(
     //             e.summary ?? 'no_title'.i18n,
     //             style: TextStyle(
-    //               color: AppColors.of(context).text.withOpacity(.95),
+    //               color: AppColors.of(context).text.withValues(alpha: .95),
     //             ),
     //           ),
     //           leading: Dot(
@@ -324,7 +325,7 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
         margin: const EdgeInsets.only(bottom: 3.0),
         decoration: BoxDecoration(
           // border: Border.all(
-          //   color: Theme.of(context).colorScheme.primary.withOpacity(.25),
+          //   color: Theme.of(context).colorScheme.primary.withValues(alpha: .25),
           //   width: 1.0,
           // ),
           color: AppColors.of(context).highlight,
@@ -339,13 +340,13 @@ class CalendarSyncScreenState extends State<GradeExportingScreen>
           title: Text(
             'reFilc - Órarend',
             style: TextStyle(
-              color: AppColors.of(context).text.withOpacity(.95),
+              color: AppColors.of(context).text.withValues(alpha: .95),
             ),
           ),
           // leading: Icon(
           //   FeatherIcons.plus,
           //   size: 20.0,
-          //   color: AppColors.of(context).text.withOpacity(0.75),
+          //   color: AppColors.of(context).text.withValues(alpha: 0.75),
           // ),
           leading: Dot(
             color: Theme.of(context).colorScheme.primary,

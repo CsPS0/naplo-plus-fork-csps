@@ -185,7 +185,9 @@ class _GoalStateScreenState extends State<GoalStateScreen> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
+                    Theme.of(context)
+                        .scaffoldBackgroundColor
+                        .withValues(alpha: 0.2),
                     Theme.of(context).scaffoldBackgroundColor,
                   ],
                   stops: const [
@@ -378,9 +380,9 @@ class _GoalStateScreenState extends State<GoalStateScreen> {
                                       borderRadius: BorderRadius.circular(45.0),
                                       color: avgDifference.isNegative
                                           ? Colors.redAccent.shade400
-                                              .withOpacity(.15)
+                                              .withValues(alpha: .15)
                                           : Colors.greenAccent.shade700
-                                              .withOpacity(.15),
+                                              .withValues(alpha: .15),
                                     ),
                                     child: Row(
                                       crossAxisAlignment:

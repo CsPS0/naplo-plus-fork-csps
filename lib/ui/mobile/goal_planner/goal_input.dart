@@ -73,7 +73,7 @@ class GoalInput extends StatelessWidget {
         //         decoration: BoxDecoration(
         //           borderRadius: BorderRadius.circular(99.0),
         //           color:
-        //               gradeColor(e, settings).withOpacity(selected ? 1.0 : 0.2),
+        //               gradeColor(e, settings).withValues(alpha: selected ? 1.0 : 0.2),
         //           border: Border.all(color: gradeColor(e, settings), width: 4),
         //         ),
         //         child: Material(
@@ -124,7 +124,7 @@ class GoalSliderPainter extends CustomPainter {
         rect,
         const Radius.circular(99.0),
       ),
-      Paint()..color = Colors.black.withOpacity(.1),
+      Paint()..color = Colors.black.withValues(alpha: .1),
     );
     canvas.drawRRect(
       RRect.fromRectAndRadius(
@@ -151,7 +151,7 @@ class GoalSliderPainter extends CustomPainter {
             size.height * 0.85),
         const Radius.circular(99.0),
       ),
-      Paint()..color = Colors.white.withOpacity(.8),
+      Paint()..color = Colors.white.withValues(alpha: .8),
     );
 
     canvas.drawOval(
@@ -171,7 +171,7 @@ class GoalSliderPainter extends CustomPainter {
       canvas.drawOval(
         Rect.fromCircle(
             center: Offset(size.width / 4 * i, size.height / 2), radius: 4),
-        Paint()..color = Colors.white.withOpacity(.6),
+        Paint()..color = Colors.white.withValues(alpha: .6),
       );
     }
   }

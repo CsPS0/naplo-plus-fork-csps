@@ -25,10 +25,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
     });
     final result =
         // ignore: use_build_context_synchronously
-        await context
-            .read<PlusProvider>()
-            .auth
-            .finishAuth(data.text!);
+        await context.read<PlusProvider>().auth.finishAuth(data.text!);
     setState(() {
       manualActivationLoading = false;
     });
@@ -153,7 +150,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                         overlayColor: WidgetStatePropertyAll(Theme.of(context)
                             .colorScheme
                             .secondary
-                            .withOpacity(.1)),
+                            .withValues(alpha: .1)),
                       ),
                       icon: manualActivationLoading
                           ? const SizedBox(
@@ -187,7 +184,7 @@ class _ActivationDashboardState extends State<ActivationDashboard> {
                   foregroundColor:
                       WidgetStatePropertyAll(AppColors.of(context).text),
                   overlayColor: WidgetStatePropertyAll(
-                      AppColors.of(context).text.withOpacity(.1)),
+                      AppColors.of(context).text.withValues(alpha: .1)),
                 ),
                 icon: const Icon(FeatherIcons.arrowLeft, size: 20.0),
                 label: const Text(

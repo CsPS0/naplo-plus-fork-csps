@@ -223,7 +223,7 @@ class AppIconItem extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
-                  color: AppColors.of(context).text.withOpacity(.75),
+                  color: AppColors.of(context).text.withValues(alpha: .75),
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

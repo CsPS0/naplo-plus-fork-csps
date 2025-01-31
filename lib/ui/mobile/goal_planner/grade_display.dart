@@ -17,7 +17,7 @@ class GradeDisplay extends StatelessWidget {
       height: 36,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: gradeColor(grade, settings).withOpacity(.3),
+        color: gradeColor(grade, settings).withValues(alpha: .3),
       ),
       child: Center(
         child: Text(

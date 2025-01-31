@@ -116,7 +116,7 @@ class GoalGraphState extends State<GoalGraph> {
         settings.graphClassAvg) {
       extraLinesH.add(HorizontalLine(
         y: widget.classAvg!,
-        color: AppColors.of(context).text.withOpacity(.75),
+        color: AppColors.of(context).text.withValues(alpha: .75),
       ));
     }
 
@@ -158,18 +158,18 @@ class GoalGraphState extends State<GoalGraph> {
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
-                                    averageColor.withOpacity(0.7),
-                                    averageColor.withOpacity(0.3),
-                                    averageColor.withOpacity(0.2),
-                                    averageColor.withOpacity(0.1),
+                                    averageColor.withValues(alpha: 0.7),
+                                    averageColor.withValues(alpha: 0.3),
+                                    averageColor.withValues(alpha: 0.2),
+                                    averageColor.withValues(alpha: 0.1),
                                   ],
                                   stops: const [0.1, 0.6, 0.8, 1],
                                 ),
                                 // colors: [
-                                //   averageColor.withOpacity(0.7),
-                                //   averageColor.withOpacity(0.3),
-                                //   averageColor.withOpacity(0.2),
-                                //   averageColor.withOpacity(0.1),
+                                //   averageColor.withValues(alpha: 0.7),
+                                //   averageColor.withValues(alpha: 0.3),
+                                //   averageColor.withValues(alpha: 0.2),
+                                //   averageColor.withValues(alpha: 0.1),
                                 // ],
                                 // gradientColorStops: [0.1, 0.6, 0.8, 1],
                                 // gradientFrom: const Offset(0, 0),
@@ -193,16 +193,16 @@ class GoalGraphState extends State<GoalGraph> {
                                     colors: [
                                       AppColors.of(context)
                                           .text
-                                          .withOpacity(0.7),
+                                          .withValues(alpha: 0.7),
                                       AppColors.of(context)
                                           .text
-                                          .withOpacity(0.3),
+                                          .withValues(alpha: 0.3),
                                       AppColors.of(context)
                                           .text
-                                          .withOpacity(0.2),
+                                          .withValues(alpha: 0.2),
                                       AppColors.of(context)
                                           .text
-                                          .withOpacity(0.1),
+                                          .withValues(alpha: 0.1),
                                     ],
                                     stops: const [0.1, 0.6, 0.8, 1],
                                   ),
@@ -216,11 +216,11 @@ class GoalGraphState extends State<GoalGraph> {
                             horizontalInterval: 1,
                             // checkToShowVerticalLine: (_) => false,
                             // getDrawingHorizontalLine: (_) => FlLine(
-                            //   color: AppColors.of(context).text.withOpacity(.15),
+                            //   color: AppColors.of(context).text.withValues(alpha: .15),
                             //   strokeWidth: 2,
                             // ),
                             // getDrawingVerticalLine: (_) => FlLine(
-                            //   color: AppColors.of(context).text.withOpacity(.25),
+                            //   color: AppColors.of(context).text.withValues(alpha: .25),
                             //   strokeWidth: 2,
                             // ),
                           ),
