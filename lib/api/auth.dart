@@ -13,6 +13,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:app_links/app_links.dart';
 import 'package:http/http.dart' as http;
 // import 'package:home_widget/home_widget.dart';
+import 'package:uuid/uuid.dart';
+import 'package:crypto/crypto.dart';
 
 class PremiumAuth {
   final SettingsProvider _settings;
@@ -155,9 +157,13 @@ class PremiumAuth {
             print(_settings.xFilcId);
           }
 
+          String requestId = Uuid().v4();
+          String hashId = md5.convert(utf8.encode(requestId)).toString();
+
           final res = await http.post(Uri.parse(FilcAPI.plusActivation), body: {
             "session_id": _settings.plusSessionId,
             "rf_uinid": _settings.xFilcId,
+            "request_id": requestId,
           });
 
           if (kDebugMode) print(res.body);
@@ -178,8 +184,15 @@ class PremiumAuth {
           if (res.body == "unknown_device") {
             throw "This device is not recognized, please contact support!";
           }
+          if (res.body == "unauthorized") {
+            throw "Authorization error, please contact support!";
+          }
 
           final premium = PremiumResult.fromJson(jsonDecode(res.body) as Map);
+
+          if (premium.responseId != hashId) {
+            throw "Authorization error, please contact support!";
+          }
 
           // successful activation of reFilc+
           log("[INFO] reFilc+ activated: ${premium.scopes.join(',')}");
