@@ -2,11 +2,14 @@
 
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:refilc/api/providers/user_provider.dart';
 import 'package:refilc/models/linked_account.dart';
 import 'package:refilc/models/settings.dart';
 import 'package:refilc/providers/third_party_provider.dart';
 import 'package:refilc/theme/colors/colors.dart';
+import 'package:refilc_kreta_api/controllers/timetable_controller.dart';
+import 'package:refilc_kreta_api/models/lesson.dart';
 import 'package:refilc_kreta_api/providers/share_provider.dart';
 import 'package:refilc_mobile_ui/common/dot.dart';
 import 'package:refilc_mobile_ui/common/panel/panel_button.dart';
@@ -20,6 +23,7 @@ import 'package:refilc_mobile_ui/screens/settings/settings_screen.i18n.dart';
 import 'package:refilc_plus/models/premium_scopes.dart';
 import 'package:refilc_plus/providers/plus_provider.dart';
 import 'package:refilc_plus/ui/mobile/plus/upsell.dart';
+import 'package:add_2_calendar/add_2_calendar.dart';
 
 class MenuCalendarSync extends StatelessWidget {
   const MenuCalendarSync({
@@ -237,79 +241,82 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                   if (thirdPartyProvider.linkedAccounts.isEmpty)
                     Column(
                       children: [
-                        if (Platform.isAndroid)
-                          SplittedPanel(
-                            title: Text('choose_account'.i18n),
-                            padding: EdgeInsets.zero,
-                            cardPadding: const EdgeInsets.all(4.0),
-                            isSeparated: true,
-                            children: [
-                              PanelButton(
-                                onPressed: () async {
-                                  await Provider.of<ThirdPartyProvider>(context,
-                                          listen: false)
-                                      .googleSignIn();
+                        // if (Platform.isAndroid)
+                        SplittedPanel(
+                          title: Text('choose_account'.i18n),
+                          padding: EdgeInsets.zero,
+                          cardPadding: const EdgeInsets.all(4.0),
+                          isSeparated: true,
+                          children: [
+                            PanelButton(
+                              onPressed: () async {
+                                // await Provider.of<ThirdPartyProvider>(context,
+                                //         listen: false)
+                                //     .googleSignIn();
+                                // pushTimetableLocal(context, controller);
 
-                                  setState(() {});
-                                },
-                                title: Text(
-                                  'Google',
-                                  style: TextStyle(
-                                    color: AppColors.of(context)
-                                        .text
-                                        .withValues(alpha: .95),
-                                  ),
-                                ),
-                                leading: Image.asset(
-                                  'assets/images/ext_logo/google.png',
-                                  width: 24.0,
-                                  height: 24.0,
-                                ),
-                                borderRadius: const BorderRadius.vertical(
-                                  top: Radius.circular(12),
-                                  bottom: Radius.circular(12),
+                                setState(() {});
+                              },
+                              title: Text(
+                                Platform.isIOS ? 'Apple' : 'Google',
+                                style: TextStyle(
+                                  color: AppColors.of(context)
+                                      .text
+                                      .withValues(alpha: .95),
                                 ),
                               ),
-                            ],
-                          ),
+                              leading: Image.asset(
+                                Platform.isIOS
+                                    ? 'assets/images/ext_logo/apple.png'
+                                    : 'assets/images/ext_logo/google.png',
+                                width: 24.0,
+                                height: 24.0,
+                              ),
+                              borderRadius: const BorderRadius.vertical(
+                                top: Radius.circular(12),
+                                bottom: Radius.circular(12),
+                              ),
+                            ),
+                          ],
+                        ),
                         // const SizedBox(
                         //   height: 9.0,
                         // ),
-                        if (Platform.isIOS)
-                          SplittedPanel(
-                            padding: EdgeInsets.zero,
-                            cardPadding: const EdgeInsets.all(4.0),
-                            isSeparated: true,
-                            children: [
-                              PanelButton(
-                                onPressed: null,
-                                title: Text(
-                                  'Apple',
-                                  style: TextStyle(
-                                    color: AppColors.of(context)
-                                        .text
-                                        .withValues(alpha: .55),
-                                    decoration: TextDecoration.lineThrough,
-                                  ),
-                                ),
-                                leading: Image.asset(
-                                  'assets/images/ext_logo/apple.png',
-                                  width: 24.0,
-                                  height: 24.0,
-                                ),
-                                trailing: Text(
-                                  'soon'.i18n,
-                                  style: const TextStyle(
-                                      fontStyle: FontStyle.italic,
-                                      fontSize: 14.0),
-                                ),
-                                borderRadius: const BorderRadius.vertical(
-                                  top: Radius.circular(12),
-                                  bottom: Radius.circular(12),
-                                ),
-                              ),
-                            ],
-                          ),
+                        // if (Platform.isIOS)
+                        //   SplittedPanel(
+                        //     padding: EdgeInsets.zero,
+                        //     cardPadding: const EdgeInsets.all(4.0),
+                        //     isSeparated: true,
+                        //     children: [
+                        //       PanelButton(
+                        //         onPressed: null,
+                        //         title: Text(
+                        //           'Apple',
+                        //           style: TextStyle(
+                        //             color: AppColors.of(context)
+                        //                 .text
+                        //                 .withValues(alpha: .55),
+                        //             decoration: TextDecoration.lineThrough,
+                        //           ),
+                        //         ),
+                        //         leading: Image.asset(
+                        //           'assets/images/ext_logo/apple.png',
+                        //           width: 24.0,
+                        //           height: 24.0,
+                        //         ),
+                        //         trailing: Text(
+                        //           'soon'.i18n,
+                        //           style: const TextStyle(
+                        //               fontStyle: FontStyle.italic,
+                        //               fontSize: 14.0),
+                        //         ),
+                        //         borderRadius: const BorderRadius.vertical(
+                        //           top: Radius.circular(12),
+                        //           bottom: Radius.circular(12),
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
 
                         const SizedBox(
                           height: 10.0,
@@ -351,7 +358,7 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
                             ),
                             PanelButton(
                               onPressed: () async {
-                                await thirdPartyProvider.signOutAll();
+                                // await thirdPartyProvider.signOutAll();
                                 setState(() {});
                               },
                               title: Text(
@@ -660,5 +667,55 @@ class CalendarSyncScreenState extends State<CalendarSyncScreen>
     );
 
     return widgets;
+  }
+
+  Future<void> pushTimetableLocal(
+      BuildContext context, TimetableController controller) async {
+    SettingsProvider settings =
+        Provider.of<SettingsProvider>(context, listen: false);
+    final days = controller.days!;
+    final everyLesson = days.expand((x) => x).toList();
+    everyLesson.sort((a, b) => a.start.compareTo(b.start));
+
+    for (Lesson l in everyLesson) {
+      String mixedDescription = '';
+
+      if (settings.calSyncShowTeacher) {
+        mixedDescription +=
+            'Tanár: ${(l.teacher.isRenamed && settings.calSyncRenamed && settings.renamedTeachersEnabled) ? l.teacher.renamedTo : l.teacher.name}\n';
+      }
+      if (settings.calSyncRoomLocation == 'description') {
+        mixedDescription += 'Terem: ${l.room}\n';
+      }
+
+      Event? event = Event(
+        title: (((l.subject.isRenamed &&
+                        settings.calSyncRenamed &&
+                        settings.renamedSubjectsEnabled)
+                    ? l.subject.renamedTo
+                    : l.subject.name) ??
+                l.name) +
+            (settings.calSyncShowExams && l.exam.replaceAll(' ', '') != ''
+                ? '📝'
+                : ''),
+        startDate: l.start,
+        endDate: l.end,
+        description: mixedDescription,
+        location: settings.calSyncRoomLocation == 'location' ? l.room : null,
+        recurrence: Recurrence(
+            frequency: Frequency
+                .weekly), // TODO: need to provide an end date (the last lesson's end time in the semester)
+      );
+
+      Add2Calendar.addEvent2Cal(event);
+
+      // temp shit (DONT BULLY ME, ILL CUM)
+      if (kDebugMode) {
+        if (false != true) print(event);
+      }
+    }
+
+    return;
+    // print('finished');
   }
 }
