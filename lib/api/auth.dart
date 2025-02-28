@@ -158,7 +158,10 @@ class PremiumAuth {
           }
 
           String requestId = Uuid().v4();
-          String hashId = md5.convert(utf8.encode(requestId)).toString();
+          DateTime now = DateTime.now();
+          String hashId = md5
+              .convert(utf8.encode(requestId + now.weekday.toString()))
+              .toString();
 
           final res = await http.post(Uri.parse(FilcAPI.plusActivation), body: {
             "session_id": _settings.plusSessionId,
@@ -167,6 +170,11 @@ class PremiumAuth {
           });
 
           if (kDebugMode) print(res.body);
+
+          // if (res.headers[""] == "") {
+
+          // }
+          // print(res.headers);
 
           if (res.body == "") throw "empty body";
           // if (res.body == "Unauthorized") {
